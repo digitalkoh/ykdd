@@ -1,0 +1,13 @@
+main {
+  min-height: 80vh;
+  padding: 12vmin;
+}
+
+p {
+  font-size: calc(12px + 1vmin);
+  padding-bottom: 2em;
+  line-height: 1.4em;
+  color: #444;
+}
+
+/*# sourceMappingURL=App.css.map */

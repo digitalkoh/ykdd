@@ -1,0 +1,24 @@
+.App-header {
+  text-align: center;
+  font-size: calc(12px + 2vmin);
+  padding: 0.1em 2vmin;
+  cursor: pointer;
+}
+.App-header h1 {
+  color: #222;
+}
+
+nav {
+  background-color: #282c34;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(16px + 2vmin);
+  padding: 1em 10vmin;
+  color: white;
+  display: none;
+}
+
+/*# sourceMappingURL=header.css.map */

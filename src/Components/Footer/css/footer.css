@@ -1,0 +1,17 @@
+footer {
+  text-align: center;
+  background-color: #222;
+  color: #ccc;
+  padding: 1em;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  font-size: calc(11px + .6vmin);
+  padding: calc(4px + 2vmin) 2vmin;
+}
+footer a {
+  color: #bbb;
+  margin: 0 calc(2px + 1vmin);
+}
+
+/*# sourceMappingURL=footer.css.map */

@@ -1,0 +1,21 @@
+
+// @keyframes App-logo-spin {
+//   from {
+//     transform: rotate(0deg);
+//   }
+//   to {
+//     transform: rotate(360deg);
+//   }
+// }
+
+main{
+    min-height: 80vh;
+    padding: 12vmin
+}
+
+p{
+    font-size: calc(12px + 1vmin);
+    padding-bottom:2em;
+    line-height:1.4em;
+    color: #444;
+}
