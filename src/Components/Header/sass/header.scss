@@ -10,11 +10,18 @@
 // }
 
 .App-header {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
     text-align: center;
     font-size: calc(12px + 2vmin);
-    padding: .1em 2vmin;
-    h1{color:#222}
-    cursor: pointer;
+    padding: .1em 2vmin 1em;
+    h1{
+        color:#222;
+        cursor: pointer;
+    }
+    //background-color: rgb(242, 242, 242);
+    background-image: linear-gradient(rgba(242, 242, 242, 1), rgba(242, 242, 242, 0.9), rgba(242, 242, 242, 0));
 }
 
 nav{
@@ -27,5 +34,17 @@ nav{
     font-size: calc(16px + 2vmin);
     padding: 1em 10vmin;
     color: white;
-    display:none;
+    cursor: pointer;
+
+    position: fixed;
+    top: -300px;
+    opacity: 0;
+    width: 100vw;
+
+    h2{
+        font-size: calc(16px + 4vmin);
+        + div{
+            font-size: calc(10px + 1vmin)
+        }
+    }
 }
