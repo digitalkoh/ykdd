@@ -1,0 +1,15 @@
+
+#home{
+    cursor:pointer;
+}
+#home h3{
+    font-size: calc(2.4em + 16vmin);
+    opacity: .8;
+    letter-spacing: -24px;
+    white-space: nowrap
+}
+
+#home h3.clickanywhere{
+     font-size: calc(1em + 5vmin);
+     white-space: pre-wrap
+}
