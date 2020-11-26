@@ -13,19 +13,20 @@
     position: sticky;
     position: -webkit-sticky;
     top: 0;
-    text-align: center;
+    // text-align: center;
     font-size: calc(12px + 2vmin);
-    padding: .1em 2vmin 1em;
+    padding: .1em 12vmin;
     h1{
-        color:#222;
+        display: inline-block;
+        min-width: 50px;
+        color: #222;
         cursor: pointer;
     }
-    //background-color: rgb(242, 242, 242);
     background-image: linear-gradient(rgba(242, 242, 242, 1), rgba(242, 242, 242, 0.9), rgba(242, 242, 242, 0));
 }
 
 nav{
-    background-color: #282c34;
+    background-color: rgba(40, 44, 52, .94);
     min-height: 10vh;
     display: flex;
     flex-direction: column;
@@ -46,5 +47,33 @@ nav{
         + div{
             font-size: calc(10px + 1vmin)
         }
+    }
+
+    ul li{
+       list-style: none;
+       display: inline;
+       a{
+           display: inline-block;
+           text-align: center;
+           font-size: 26px;
+           font-weight: 600;
+           text-decoration: none;
+           width: 44px;
+           height: 44px;
+           background-color: #39a139;
+           color: #333;
+           margin:8px;
+           transition: .6s;
+           &:hover{background-color: #0af50a}
+           &.active{background-color: rgba(40, 44, 52, 1); border: solid 1px #0af50a; color: #0af50a}
+
+
+           @media only screen and (max-width: 778px) {
+                font-size: 22px;
+                font-weight: 600;
+                width: 36px;
+                height: 36px;
+           }
+       } 
     }
 }

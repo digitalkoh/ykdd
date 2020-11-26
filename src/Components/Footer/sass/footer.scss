@@ -1,15 +1,48 @@
 footer{
-    text-align: center;
-    background-color: rgba(34, 34, 34, 0.94);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background-color: rgba(40, 44, 52, 0.94);
     color: #ccc;
     position:fixed;
     bottom: 0;
     width: 100vw;
 
     font-size: calc(11px + .6vmin);
-    padding: calc(4px + 2vmin) 2vmin;
+    padding: calc(4px + 2vmin) 12vmin;
+
+    .copy{
+        display: flex;
+        align-items: center;
+        text-align: left;
+        color: #999;
+        .flogo{
+            font-size: calc(22px + 1.8vmin);
+            font-family: 'Anton', sans-serif;
+            color: #eee;
+            margin-right: 12px
+        }
+    }
+
     a{
+        display: inline-block;
         color: #bbb;
         margin: 0 calc(2px + 1vmin)
+    }
+
+    .sites{
+        img{
+            transition: .5s; opacity: .4;
+            &:hover{transition: .5s; opacity: 1}
+        }
+    }
+
+    @media only screen and (max-width: 778px) {
+        text-align: center;
+        justify-content: center;
+        position:relative;
+        bottom: auto;
+        .copy{padding-bottom: 24px}
     }
 }
