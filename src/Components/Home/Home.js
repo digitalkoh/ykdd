@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import './home.css';
 
-//const hStyle={margin: "auto"}
-
 class Home extends Component {
 
     handleScroll() {
@@ -12,20 +10,32 @@ class Home extends Component {
         let ls = (-24) + (window.pageYOffset/5);
 
         for (index; index < length; index++) {
+            // Divide by 2 for smaller increments
             let pos = (window.pageYOffset/2) * target[index].dataset.rate;
 
             target[index].style.transform = 'translate3d(0px, ' + pos + 'px, 0px)';
-            if(ls < 12) {
-                target[index].style.letterSpacing = ls + 'px';
-            }
 
+            // For horizontal direction
+            // let posX = window.pageYOffset * target[index].dataset.ratex;
+            // let posY = window.pageYOffset * target[index].dataset.ratey;
+            // target[index].style.transform = 'translate3d(' + posX + 'px, ' + posY + 'px, 0px)';
+
+            if(index === length-1){
+                if(ls < 8) {
+                    target[index].style.letterSpacing = ls + 'px';
+                }
+            } else {
+                if(ls < 12) {
+                    target[index].style.letterSpacing = ls + 'px';
+                }
+            }
         }
 
-        console.log(ls)
+        //console.log(ls)
     }
 
     moveLocation() {
-        window.location.href = "/projects/p1";
+        window.location.href = "/#/projects/p1";
     }
 
     componentDidMount(){

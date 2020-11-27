@@ -10,6 +10,6 @@
 }
 
 #home h3.clickanywhere{
-     font-size: calc(1em + 5vmin);
+     font-size: calc(1em + 3vmin);
      white-space: pre-wrap
 }
