@@ -6,6 +6,7 @@ section, summary,time, mark, audio, video {margin:0;padding:0;border:0}
 article, aside, details, figcaption, figure, footer, header, hgroup{display: block}
 html {box-sizing: border-box}
 *, *:before, *:after {box-sizing: inherit}
+a{text-decoration: none}
 
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Dosis:wght@200;300;400;500;600;700&display=swap');

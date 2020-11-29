@@ -1,8 +1,12 @@
+
+import './style.css'
+import {TestAnim} from "./anim.js";
+
 function Mankind_Timeline() {
 
   return (
-      <div>
-        Mankind Timeline
+      <div className="container">
+        <TestAnim />
       </div>
   );
 

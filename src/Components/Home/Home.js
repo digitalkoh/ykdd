@@ -6,27 +6,28 @@ class Home extends Component {
     handleScroll() {
         const target = document.getElementsByTagName("h3");
 
-        let index = 0, length = target.length;
+        let i = 0, length = target.length;
         let ls = (-24) + (window.pageYOffset/5);
 
-        for (index; index < length; index++) {
+        for (i; i < length; i++) {
+
             // Divide by 2 for smaller increments
-            let pos = (window.pageYOffset/2) * target[index].dataset.rate;
-
-            target[index].style.transform = 'translate3d(0px, ' + pos + 'px, 0px)';
-
+            let pos = (window.pageYOffset/2) * target[i].dataset.rate;
+            
+            target[i].style.transform = 'translate3d(0px, ' + pos + 'px, 0px)';
+        
             // For horizontal direction
             // let posX = window.pageYOffset * target[index].dataset.ratex;
             // let posY = window.pageYOffset * target[index].dataset.ratey;
             // target[index].style.transform = 'translate3d(' + posX + 'px, ' + posY + 'px, 0px)';
 
-            if(index === length-1){
+            if(i === length-1){
                 if(ls < 8) {
-                    target[index].style.letterSpacing = ls + 'px';
+                    target[i].style.letterSpacing = ls + 'px';
                 }
             } else {
                 if(ls < 12) {
-                    target[index].style.letterSpacing = ls + 'px';
+                    target[i].style.letterSpacing = ls + 'px';
                 }
             }
         }
@@ -49,7 +50,7 @@ class Home extends Component {
 
     render() {
         return(
-            <div id="home">
+            <div id="home" style={{paddingTop: "80px"}}>
                 <h3 style={{color: "#6a97a3"}} data-rate="1">Digital</h3>
                 <h3 style={{color: "#6a89a3"}} data-rate="-.05">Design</h3>
                 <h3 style={{color: "#6a76a3"}} data-rate="-1">&amp; Functionality</h3>
