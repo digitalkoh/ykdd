@@ -1,24 +1,28 @@
-import './css/style.css'
+import { Link } from "react-router-dom";
+import React, { useState } from 'react';
 import { Board } from "./Board.js";
+import './css/style.css'
 
-const containerStyle={
-    display: 'flex', 
-    alignItems: 'center',
-    justifyContent: 'center',
-    position: 'relative', 
-    width: '80vw', 
-    height: '75vh', 
-    border: 'solid 1px #ccc'
+function ProjectPuzzleEinstein() {
+
+    const [puzzleType, setPuzzleType] = useState('normal');
+    const [showNumber, setShowNumber] = useState(true);
+
+    const handleClickNumber = () => setShowNumber(value => !value)
+    const handleShuffle = () => setPuzzleType('shuffle')
+    const handleReset = () => setPuzzleType('normal')
+
+    return (
+        <>
+            <Board puzzleType={puzzleType} showNumber={showNumber} />
+
+            <div>
+                <Link onClick={handleClickNumber}>Num</Link>
+                <Link onClick={handleShuffle}>Shuffle</Link>
+                <Link onClick={handleReset}>Reset</Link>
+            </div>
+        </>
+    )
 }
 
-function Mankind_Timeline() {
-
-  return (
-      <div className="container" style={containerStyle}>
-        <Board />
-      </div>
-  );
-
-}
-
-export default Mankind_Timeline;
+export default ProjectPuzzleEinstein;

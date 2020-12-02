@@ -1,3 +1,55 @@
-
+.pzcontainer .box {
+  opacity: 0.8;
+  background-size: 500px 500px;
+  background-repeat: no-repeat;
+}
+.pzcontainer .box[data-key="0"] {
+  background-position: 0% 0%;
+}
+.pzcontainer .box[data-key="1"] {
+  background-position: 33.33% 0%;
+}
+.pzcontainer .box[data-key="2"] {
+  background-position: 66.66% 0%;
+}
+.pzcontainer .box[data-key="3"] {
+  background-position: 100% 0%;
+}
+.pzcontainer .box[data-key="4"] {
+  background-position: 0% 33.33%;
+}
+.pzcontainer .box[data-key="5"] {
+  background-position: 33.33% 33.33%;
+}
+.pzcontainer .box[data-key="6"] {
+  background-position: 66.66% 33.33%;
+}
+.pzcontainer .box[data-key="7"] {
+  background-position: 100% 33.33%;
+}
+.pzcontainer .box[data-key="8"] {
+  background-position: 0% 66.66%;
+}
+.pzcontainer .box[data-key="9"] {
+  background-position: 33.33% 66.66%;
+}
+.pzcontainer .box[data-key="10"] {
+  background-position: 66.66% 66.66%;
+}
+.pzcontainer .box[data-key="11"] {
+  background-position: 100% 66.66%;
+}
+.pzcontainer .box[data-key="12"] {
+  background-position: 0% 100%;
+}
+.pzcontainer .box[data-key="13"] {
+  background-position: 33.33% 100%;
+}
+.pzcontainer .box[data-key="14"] {
+  background-position: 66.66% 100%;
+}
+.pzcontainer .box[data-key="15"] {
+  background-position: 100% 100%;
+}
 
 /*# sourceMappingURL=style.css.map */
