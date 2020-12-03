@@ -1,61 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import Draggable from 'react-draggable';
+import { boardStyle, boxStyle, containerStyle, squareStyle } from './Style';
 
-// Combined all nested elements here to make it easy to pass size parameters
+const PIECE_SIZE = 500 / 4;
+const PIECE_GRID_SNAP = 500 / 8;
+const NUMBER_OF_PIECES = 16;
+const background_image = { backgroundImage: `url( ${process.env.PUBLIC_URL}/img/ein.jpg )` }
+const background_color = { backgroundColor: 'rgb(12, 50, 94, .7)' }
 
-const boardStyle = {
-    width: '500px',
-    height: '500px',
-    display: 'flex',
-    flexWrap: 'wrap',
-    border: 'solid 1px #ddd'
-};
-
-const boxStyle={
-    display: 'flex', 
-    alignItems: 'center',
-    justifyContent: 'center',
-    width: '100%',
-    height: '100%',
-    fontSize: '3em',
-    color: '#fff',
-    fontWeight: 'bold',
-    border: 'solid 1px #fff',
-    borderRadius: '8px',
-    backgroundImage: `url( ${process.env.PUBLIC_URL}/img/ein.jpg )`
-};
-
-const containerStyle={
-    display: 'flex', 
-    alignItems: 'center',
-    justifyContent: 'center',
-    position: 'relative', 
-    width: '750px', 
-    height: '750px', 
-    border: 'solid 1px #ccc'
-};
-
-// Cubic-Bezier ain't got nuthin' on me.
-// Go wild...!
-const squareStyle = {
-    width: '25%', 
-    height: '25%',
-    transition: '.4s',
-    transitionTimingFunction: 'cubic-bezier(0.45, 0.25, 0.60, 0.95)'
-};
-const imgPieceStyle = 500 / 4;
-const pieceGridSnap = 500 / 8;
-const numberOfSquares = 16;
-
-export const Board = ({ puzzleType, showNumber }) => {
+export const Board = ({ puzzleType, showNumber}) => {
     const [zindex, setZindex] = useState(0);
     const [render, setRender] = useState(puzzleType);
 
     const onStartAction = (e) => {
-        // This prevents text highlighting inside boxes, in any
         e.preventDefault();
 
-        
         if(render !== "shuffle") {
             // Increment z-index by one on each drag.
             // This maintains nice order of z so that boxes don't disappear in awkward fashion.
@@ -71,25 +30,18 @@ export const Board = ({ puzzleType, showNumber }) => {
     };
 
     function renderSquare(i) {
+        // x, y currently not used...
         const x = i % 4;
         const y = Math.floor(i / 4);
         const boxIdName = "box-" + i;
 
         return (
-            // Wanted to separate out the 'boxParent' and/or the 'box', but React Draggable will only
-            // recognize boundary elements correctly when the actual div is used as a child.
-            // Few other Draggable behavior got funky when component was passed as ca child.
-            <Draggable onStart={(e) => onStartAction(e)} bounds=".container" key={i} grid={[pieceGridSnap, pieceGridSnap]}>
-                <div className="boxParent" id={boxIdName} data-key={i} key={i} style={squareStyle}>
+            // React Draggable will only recognize boundary elements correctly when 'box' is passed as a child directly, instead of as component
+            <Draggable onStart={(e) => onStartAction(e)} bounds=".container" key={i} grid={[PIECE_GRID_SNAP, PIECE_GRID_SNAP]}>
+                <div className="boxParent" id={boxIdName} data-key={i} key={i} style={squareStyle} >
                     <div data-key={i} data-xpos={x} data-ypos={y}
                         className="box" 
-                        style={{
-                            ...boxStyle,
-                            backgroundColor: 'rgb(12, 50, 94, .7)', 
-                            cursor: 'move', 
-                            width: imgPieceStyle,
-                            height: imgPieceStyle
-                        }}
+                        style={{ ...boxStyle, ...background_image, ...background_color, width: PIECE_SIZE, height: PIECE_SIZE }}
                     >
                         {showNumber ? i + 1 : ''}
                     </div>
@@ -103,7 +55,7 @@ export const Board = ({ puzzleType, showNumber }) => {
 
     // ================================= Normal Puzzle  ================================== //
     function puzzleNormal() {
-        for (let i = 0; i < numberOfSquares; i += 1) {
+        for (let i = 0; i < NUMBER_OF_PIECES; i += 1) {
             squares.push(renderSquare(i));
         }
     }
@@ -124,25 +76,14 @@ export const Board = ({ puzzleType, showNumber }) => {
         for (let i = 0; i < shuffledSquares.length; i += 1) {
             squares.push(renderSquare(shuffledSquares[i]));
         }
-        //console.log(squares);
     }
 
-    // function maintainRender() {
-    //     squares.length = 0;
-    //     for (let i = 0; i < shuffledSquares.length; i += 1) {
-    //         squares.push(renderSquare(shuffledSquares[i]));
-    //     }
-    // }
-
+    // Rerender puzzle each time type changes. Does nothing if puzzleType stayed the same
     useEffect(() => {
         setRender(puzzleType)
     },[puzzleType]);
 
-    // useEffect(() => {
-    //     setRender('')
-    // },[showNumber]);
-
-
+    // Choose which puzzle to render based on type
     if(render === 'normal') {
         puzzleNormal() 
     } else if(render === 'shuffle') {
