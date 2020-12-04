@@ -4,7 +4,9 @@ export const boardStyle = {
     height: '500px',
     display: 'flex',
     flexWrap: 'wrap',
-    border: 'solid 1px #ddd'
+    border: 'solid 1px #ddd',
+    borderRadius: '6px',
+    backgroundColor: '#eee'
 };
 
 export const boxStyle={
@@ -18,7 +20,7 @@ export const boxStyle={
     color: '#fff',
     fontWeight: 'bold',
     border: 'solid 1px #fff',
-    borderRadius: '8px'
+    borderRadius: '6px'
 };
 
 export const containerStyle={
@@ -26,9 +28,10 @@ export const containerStyle={
     alignItems: 'center',
     justifyContent: 'center',
     position: 'relative', 
-    width: '750px', 
-    height: '750px', 
-    border: 'solid 1px #ccc'
+    width: '625px', 
+    height: '625px', 
+    border: 'solid 1px #ccc',
+    borderRadius: '4px'
 };
 
 export const squareStyle = {

@@ -6,23 +6,19 @@
   position: -webkit-sticky;
   top: 0;
   font-size: calc(12px + 2vmin);
-  padding: 0.1em 12vmin;
-  background-color: rgba(242, 242, 242, 0.6);
-}
-.App-header h1 {
-  display: inline-block;
-  min-width: 50px;
-  color: #222;
-  cursor: pointer;
-}
-.App-header h1 a {
-  color: inherit;
+  padding: 0 12vmin;
 }
 
 nav {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  width: 100vw;
+}
+@media only screen and (max-width: 1280px) {
+  nav {
+    justify-content: center;
+  }
 }
 nav ul li {
   list-style: none;
@@ -32,6 +28,7 @@ nav ul li a {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  border-radius: 100%;
   font-size: calc(10px + 1vmin);
   font-weight: 600;
   width: 38px;
@@ -46,12 +43,12 @@ nav ul li a:hover {
   color: #fff;
 }
 nav ul li a.active {
-  background-color: #65b806;
+  background-color: #f8981b;
   color: #fff;
 }
 @media only screen and (max-width: 778px) {
   nav ul li a {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 600;
     width: 36px;
     height: 36px;

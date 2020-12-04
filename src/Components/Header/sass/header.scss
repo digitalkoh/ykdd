@@ -1,5 +1,6 @@
 $dark-grey: rgb(40, 44, 52);
 $green: rgb(117, 214, 7);
+$orange: rgb(248, 152, 27);
 
 .App-header {
     z-index: 999;
@@ -9,23 +10,19 @@ $green: rgb(117, 214, 7);
     position: -webkit-sticky;
     top: 0;
     font-size: calc(12px + 2vmin);
-    padding: .1em 12vmin;
-    h1{
-        display: inline-block;
-        min-width: 50px;
-        color: #222;
-        cursor: pointer;
-        a{
-            color: inherit
-        }
-    }
-    background-color: rgba(242, 242, 242, .6);
+    padding: 0 12vmin;
 }
 
 nav{
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    width: 100vw;
+    // background-color: rgba(242, 242, 242, .6);
+
+    @media only screen and (max-width: 1280px) {
+        justify-content: center;
+    }
 
     ul li{
        list-style: none;
@@ -34,6 +31,7 @@ nav{
            display: inline-flex;
            align-items: center;
            justify-content: center;
+           border-radius: 100%;
            font-size: calc(10px + 1vmin);
            font-weight: 600;
            width: 38px;
@@ -43,11 +41,12 @@ nav{
            margin: 6px;
            transition: .6s;
            &:hover{background-color: lighten($dark-grey, 28%); color: #fff}
-           &.active{background-color: darken($green, 6%); color: #fff}
+        //    &.active{background-color: darken($green, 6%); color: #fff}
+           &.active{background-color: $orange; color: #fff}
 
 
            @media only screen and (max-width: 778px) {
-                font-size: 22px;
+                font-size: 18px;
                 font-weight: 600;
                 width: 36px;
                 height: 36px;

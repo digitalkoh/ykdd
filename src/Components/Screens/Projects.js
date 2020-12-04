@@ -7,7 +7,7 @@ import DragTest from '../Projects/DragTest/DragTest';
 function ProjectsScreen() {
 
   return (
-    <div style={{display: "flex", justifyContent: "center"}}>
+    <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
         <Switch>
             <Route path="/projects/p1" component={ProjectPuzzleEinstein} />
             <Route path="/projects/p2" component={ProjectMankindTimeline} />
