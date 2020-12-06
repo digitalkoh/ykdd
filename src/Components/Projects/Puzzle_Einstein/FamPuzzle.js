@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Board } from "./Board";
-import ImgLoader from "./ImgLoader";
+import ImgLoaderFam from "./ImgLoaderFam";
 import './css/style.css'
 
 function ProjectPuzzleEinstein() {
     const [puzzleType, setPuzzleType] = useState('normal');
     const [showNumber, setShowNumber] = useState(false);
     const [reset, setReset] = useState(0);
-    const [pic, setPic] = useState('ein');
+    const [pic, setPic] = useState('f1');
     const [newArr, setNewArr] = useState();
     const handleClickNumber = () => setShowNumber(value => !value);
     
@@ -56,9 +56,9 @@ function ProjectPuzzleEinstein() {
             <div className="controls">
                 <button className="bt-big" onClick={handleShuffle}>Shuffle</button>
                 <button className="bt-small" onClick={handleReset}>Reset</button>
-                <button className="bt-small" onClick={handleClickNumber}>Cheater's Button</button>
+                <button className="bt-small" onClick={handleClickNumber} lang="kr">반칙왕</button>
 
-                <ImgLoader onImgChange={handleClickPic}/>
+                <ImgLoaderFam onImgChange={handleClickPic}/>
             </div>
         </>
     )

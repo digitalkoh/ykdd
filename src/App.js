@@ -3,10 +3,8 @@ import { HashRouter as Router, Route, Switch } from "react-router-dom";
 // import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
-import Home from './Components/Home/Home';
-import About from './Components/About';
-import Contact from './Components/Contact';
-import ProjectsScreen from './Components/Screens/Projects';
+import Home from './Components/Projects/Home/Home';
+import ProjectsScreen from './Components/Projects/Projects';
 
 import './css/App.css';
 
@@ -20,9 +18,7 @@ function App() {
             <main>
                 <Switch>
                     <Route exact path="/" component={Home} />
-                    <Route path="/about" component={About} />
-                    <Route path="/contact" component={Contact} />
-                    <Route path="/projects" component={ProjectsScreen} />
+                    <Route path="/project" component={ProjectsScreen} />
                 </Switch>
             </main>
 

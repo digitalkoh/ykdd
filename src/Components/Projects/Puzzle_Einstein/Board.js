@@ -106,4 +106,4 @@ export const Board = ({ puzzleType, showNumber, newArr, pic, reset}) => {
             </div>
         </div>
     )
-};
+}

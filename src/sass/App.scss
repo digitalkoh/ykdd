@@ -1,0 +1,31 @@
+main {
+    padding: 1vmin 12vmin;
+    margin-bottom: 120px
+}
+
+p {
+    font-size: calc(12px + 1vmin);
+    padding-bottom: 2em;
+    line-height: 1.4em;
+    color: #444;
+}
+
+// Puzzle Controls ===============================================
+.controls {margin: 12px; text-align: center;
+    button {
+        cursor: pointer;
+        transition: .6s; margin:24px 18px; padding: 1em 2em; color: #555;
+        border-radius: 100px; border: solid 1px #bbb; font-size: 1.2em; outline: none;
+        background-image: linear-gradient(#f1f1f1, #ddd);
+
+        &:hover {transition: .4s; color: #222; border-color: #999; text-shadow: 1px 1px 4px #bbb}
+        &.bt-small {padding: .8em 1.6em; font-size: 1em}
+        &.bt-big {font-size: 1.4em}
+    }
+
+    .bt-imgSelect{cursor: pointer; transition: .6s;
+        width: 70px; height: 70px; border-radius: 100px; margin: 0 12px; background-color: #ccc;
+        background-size: cover; opacity: .5;
+        &:hover{opacity: .9}
+    }
+}

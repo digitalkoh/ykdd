@@ -8,7 +8,7 @@ function Footer() {
   return (
       <footer>
           <div className="copy">
-              <div className="flogo">YKDD</div>  
+              <div className="flogo" style={{cursor: 'pointer'}} onClick={() => window.location.href = "/#/"}>YKDD</div>  
               <div>YOUNG KOH DESIGN // DIGITAL <br />a young koh project &copy; 2006 ~ {yr}</div>
             </div>
           <div className="sites">

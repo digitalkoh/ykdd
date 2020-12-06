@@ -36,7 +36,7 @@ class Home extends Component {
     }
 
     moveLocation() {
-        window.location.href = "/#/projects/p1";
+        window.location.href = "/#/project/p1";
     }
 
     componentDidMount(){

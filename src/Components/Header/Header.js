@@ -9,9 +9,9 @@ function Header() {
                  <nav>
                     <ul>
                         <li><NavLink exact to='/' title='Home'>0</NavLink></li>
-                        <li><NavLink to='/projects/p1'>1</NavLink></li>
-                        <li><NavLink to='/projects/p2'>2</NavLink></li>
-                        <li><NavLink to='/projects/p3'>3</NavLink></li>
+                        <li><NavLink to='/project/p1'>1</NavLink></li>
+                        <li><NavLink to='/project/p2'>2</NavLink></li>
+                        <li><NavLink to='/project/p3'>3</NavLink></li>
                     </ul>
                 </nav>
             </header>
