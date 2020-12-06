@@ -19,10 +19,13 @@ class ImgLoader extends Component {
 
     render() {
         return (
-            <div style={{display: 'flex', flexDirection: 'row'}}>
-                {imgData.images.map(i =>
-                    <div className="bt-imgSelect" style={{backgroundImage: `url( ${process.env.PUBLIC_URL}/img/` + i + `.jpg )`}} onClick={() => this.handleClick(i)}></div>
-                )}   
+            <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
+                {imgData.images.map(i => 
+                    {
+                        let activeClass = i === this.props.pic ? 'bt-imgSelect active' : 'bt-imgSelect';
+                        return <div className={activeClass} style={{backgroundImage: `url( ${process.env.PUBLIC_URL}/img/` + i + `.jpg )`}} onClick={() => this.handleClick(i)}></div>
+                    }
+                )}
             </div>
         );
     }

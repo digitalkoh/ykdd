@@ -41,7 +41,6 @@ p {
 }
 .controls .bt-imgSelect {
   cursor: pointer;
-  transition: 0.6s;
   width: 70px;
   height: 70px;
   border-radius: 100px;
@@ -52,6 +51,12 @@ p {
 }
 .controls .bt-imgSelect:hover {
   opacity: 0.9;
+}
+.controls .bt-imgSelect.active {
+  opacity: 1;
+  border: solid 3px #f8981b;
+  width: 80px;
+  height: 80px;
 }
 
 /*# sourceMappingURL=App.css.map */

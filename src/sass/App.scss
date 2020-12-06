@@ -23,9 +23,10 @@ p {
         &.bt-big {font-size: 1.4em}
     }
 
-    .bt-imgSelect{cursor: pointer; transition: .6s;
+    .bt-imgSelect{cursor: pointer;
         width: 70px; height: 70px; border-radius: 100px; margin: 0 12px; background-color: #ccc;
         background-size: cover; opacity: .5;
         &:hover{opacity: .9}
+        &.active{opacity: 1; border: solid 3px rgb(248, 152, 27); width: 80px; height: 80px;}
     }
 }

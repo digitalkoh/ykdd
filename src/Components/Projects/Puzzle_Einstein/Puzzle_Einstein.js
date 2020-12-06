@@ -58,7 +58,7 @@ function ProjectPuzzleEinstein() {
                 <button className="bt-small" onClick={handleReset}>Reset</button>
                 <button className="bt-small" onClick={handleClickNumber}>Cheater's Button</button>
 
-                <ImgLoader onImgChange={handleClickPic}/>
+                <ImgLoader onImgChange={handleClickPic} pic={pic} />
             </div>
         </>
     )
