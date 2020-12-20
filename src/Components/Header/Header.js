@@ -12,6 +12,7 @@ function Header() {
                         <li><NavLink to='/project/p1'>1</NavLink></li>
                         <li><NavLink to='/project/p2'>2</NavLink></li>
                         <li><NavLink to='/project/p3'>3</NavLink></li>
+                        <li><NavLink to='/project/p4'>4</NavLink></li>
                     </ul>
                 </nav>
             </header>

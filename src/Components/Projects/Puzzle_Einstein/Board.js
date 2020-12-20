@@ -47,7 +47,7 @@ export const Board = ({ puzzleType, showNumber, newArr, pic, reset}) => {
                         className="box"
                         style={{ ...boxStyle, ...background_image, ...background_color, width: PIECE_SIZE, height: PIECE_SIZE }}
                     >
-                        {showNumber ? i + 1 : ''}
+                        {showNumber && i + 1}
                     </div>
                 </div>
             </Draggable>
@@ -58,7 +58,7 @@ export const Board = ({ puzzleType, showNumber, newArr, pic, reset}) => {
                         className="box"
                         style={{ ...boxStyle, ...background_image, ...background_color, width: PIECE_SIZE, height: PIECE_SIZE }}
                     >
-                        {showNumber ? i + 1 : ''}
+                        {showNumber && i + 1}
                     </div>
                 </div>
             </Draggable>

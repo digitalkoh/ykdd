@@ -23,7 +23,7 @@ class ImgLoader extends Component {
                 {imgData.images.map(i => 
                     {
                         let activeClass = i === this.props.pic ? 'bt-imgSelect active' : 'bt-imgSelect';
-                        return <div className={activeClass} style={{backgroundImage: `url( ${process.env.PUBLIC_URL}/img/` + i + `.jpg )`}} onClick={() => this.handleClick(i)}></div>
+                        return <div key={i} className={activeClass} style={{backgroundImage: `url( ${process.env.PUBLIC_URL}/img/` + i + `.jpg )`}} onClick={() => this.handleClick(i)}></div>
                     }
                 )}
             </div>
