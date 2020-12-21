@@ -1,6 +1,6 @@
 /* scope [data-scope-starapione] */
 
-[data-scope-starapione] {font-family: 'Roboto', sans-serif}
+[data-scope-starapione] {font-family: 'Roboto', sans-serif; width: 100%; height: 100%}
 [data-scope-starapione] {background-color: #000; color: #ccc}
 
 [data-scope-starapione] .imageControls {
@@ -47,4 +47,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    min-height: 300px
+}
+[data-scope-starapione] .message {
+    font-size: 2.4em;
+    padding: 40px;
+    color: #777
 }

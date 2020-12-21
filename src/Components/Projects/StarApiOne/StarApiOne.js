@@ -76,6 +76,8 @@ const StarApiOne = () => {
     const [manifestInfo, setManifestInfo] = useState({});
     const [roverName, setRoverName] = useState('curiosity');
     const [sol, setSol] = useState(0);
+    const [noImg, setNoImg] = useState(false);
+    const [clickedWith, setClickedWith] = useState('');
     // const [camera, setCamera] = useState('fhaz');
     const apiKEY = 'DEMO_KEY';
 
@@ -86,10 +88,12 @@ const StarApiOne = () => {
     fetchNextSet.current = () => {
         fetchPhotoData(nextPageNumber, roverName, sol, apiKEY).then(randomData => {
             
-            console.log('page: ' + nextPageNumber)
-            console.log('sol: ' + sol)
-            console.log('rover: ' + roverName)
+            // console.log('page: ' + nextPageNumber)
+            // console.log('sol: ' + sol)
+            // console.log('rover: ' + roverName)
             
+            setNoImg(false);
+
             // Reset page and date when new rover is selected
             if(resetDateAndPage) {
                 setNextPageNumber(1);
@@ -102,11 +106,11 @@ const StarApiOne = () => {
             // Reset to oage 1 on new SOL date
             if(resetPageOnly) {
                 setNextPageNumber(1);
-                setResetPageOnly(false)
             }
 
             if (randomData === undefined) return;
             if (randomData.photos.length < 1) {
+                setNoImg(true);
                 console.log('no data')
             };
             
@@ -114,6 +118,9 @@ const StarApiOne = () => {
                 ...randomData.photos
             ]
             setRoverInfo(newInfos);
+            setResetPageOnly(false)
+
+            console.log(roverInfo)
         })
     };
 
@@ -154,23 +161,35 @@ const StarApiOne = () => {
                     Sol: {sol}<br />
                     {
                         sol > 0 ? 
-                        <button onClick={() => {setSol(sol - 1); setResetPageOnly(true)}}>Previous Sol</button> 
+                        <button onClick={() => {setSol(sol - 1); setResetPageOnly(true); setClickedWith(`No photo taken on sol ${sol-1}.`)}}>Previous Sol</button> 
                         : 
                         <button disabled >Previous Sol</button>
                     }
                     {   
                         manifestInfo.length > 0 && 
                         sol < manifestInfo[0].max_sol ? 
-                        <button onClick={() => {setSol(sol + 1); setResetPageOnly(true)}}>Next Sol</button> 
+                        <button onClick={() => {setSol(sol + 1); setResetPageOnly(true); setClickedWith(`No photo taken on sol ${sol+1}.`)}}>Next Sol</button> 
                         : 
                         <button disabled >Next Sol</button>
                     }
                     <button onClick={() => {setSol(manifestInfo[0].max_sol); setResetPageOnly(true)}}>Most Recent Photos</button>
                 </div>
+
                 <div className='pagination'>
                     {nextPageNumber}<br />
-                    {nextPageNumber > 1 ? <button onClick={() => {setNextPageNumber(nextPageNumber - 1)}}>Previous Page</button> : <button disabled >Previous Page</button>}
-                    <button onClick={() => {setNextPageNumber(nextPageNumber + 1)}}>Next Page</button>
+                    {
+                        nextPageNumber > 1 ? 
+                        <button onClick={() => {setNextPageNumber(nextPageNumber - 1); setClickedWith('No images available on this page.')}}>Previous Page</button> 
+                        : 
+                        <button disabled >Previous Page</button>
+                    }
+                    {
+                        roverInfo.length > 0 ? 
+                        <button onClick={() => {setNextPageNumber(nextPageNumber + 1); setClickedWith(`End of images on sol ${sol}.`)}}>Next Page</button>
+                        : 
+                        <button disabled >Next Page</button>
+                    }
+                    
                     {roverInfo.length > 0 && getPhotoDates(roverInfo[0])}
                 </div>
             </div>
@@ -184,6 +203,8 @@ const StarApiOne = () => {
                         </div>
                     ))
                 }
+
+                {noImg && <p className='message'>{clickedWith}</p>}
             </div>
 
             <div className='projectDesc' style={{borderTop: 'solid 1px #333', color: '#777'}}>
