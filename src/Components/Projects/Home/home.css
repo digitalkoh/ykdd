@@ -1,6 +1,7 @@
 
 #home{
     cursor:pointer;
+    padding: 1vmin 12vmin;
 }
 #home h3{
     font-size: calc(2.4em + 16vmin);

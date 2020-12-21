@@ -60,6 +60,11 @@ function ProjectPuzzleEinstein() {
 
                 <ImgLoader onImgChange={handleClickPic} pic={pic} />
             </div>
+
+            <div className='projectDesc' style={{borderTop: 'solid 1px #ccc', color: '#777', fontSize: '1.2em'}}>
+                Built with:
+                React JSX / ES6 / Javascript React-Draggable
+            </div>
         </>
     )
 }

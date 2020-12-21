@@ -1,2 +1,50 @@
 /* scope [data-scope-starapione] */
 
+[data-scope-starapione] {font-family: 'Roboto', sans-serif}
+[data-scope-starapione] {background-color: #000; color: #ccc}
+
+[data-scope-starapione] .imageControls {
+    position: sticky;
+    top: 0;
+    text-align:center;
+    background-color: rgba(0, 0, 0, .8);
+    padding: 20px
+}
+
+[data-scope-starapione] .roverInfo {
+    margin: 10px;
+    padding: 10px;
+    border-top: solid 1px #444;
+   
+}
+
+[data-scope-starapione] .imgContainer {
+    margin: calc(2px + .5vmin)
+}
+
+[data-scope-starapione] img {
+    transition: .4s;
+    border: solid 1px #444;
+    cursor: pointer;
+    width: calc(120px)
+}
+
+[data-scope-starapione] img {
+    transition: .4s;
+    border: solid 1px #444;
+    cursor: pointer;
+    width: 280px
+}
+@media only screen and (max-width: 1300px) {[data-scope-starapione] img {width: 220px}}
+@media only screen and (max-width: 740px) {[data-scope-starapione] img {width: 200px}}
+@media only screen and (max-width: 500px) {[data-scope-starapione] img {width: 140px}}
+
+[data-scope-starapione] img:hover {
+    border: solid 1px #eee;
+}
+
+[data-scope-starapione] #nasaimages {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
