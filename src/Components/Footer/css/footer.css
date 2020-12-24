@@ -19,10 +19,14 @@ footer .copy {
   color: #999;
 }
 footer .copy .flogo {
+  transition: 0.5s;
   font-size: calc(22px + 1.8vmin);
   font-family: "Anton", sans-serif;
   color: #eee;
   margin-right: 12px;
+}
+footer .copy .flogo:hover {
+  color: #f8981b;
 }
 footer a {
   display: inline-block;

@@ -48,8 +48,10 @@ const getPhotoDates = (roverInfo) => {
     //const {sol, earth_date, camera: {full_name, name}, rover: {landing_date, launch_date, status, name}} = roverInfo;
     return  (
         <>
-            <div>Martian Sol: {roverInfo.sol}</div>
-            <div>Earth Date: {roverInfo.earth_date}</div>
+            <div className='dates'>
+                <div><label>Martian Sol</label> {roverInfo.sol}</div>
+                <div><label>Earth Date</label> {roverInfo.earth_date}</div>
+            </div>
         </>
     )
 }
@@ -57,13 +59,17 @@ const getPhotoDates = (roverInfo) => {
 const extractManifest = (manifestInfo) => {
     return  (
         <>  
-            <div>Rover Name: {manifestInfo.name}</div>
-            <div>Launch Date: {manifestInfo.launch_date}</div>
-            <div>Landing Date: {manifestInfo.landing_date}</div>
-            <div>Status: {manifestInfo.status}</div>
-            <div>Most Recent Photo Date: {manifestInfo.max_date}</div>
-            <div>Total Sol: {manifestInfo.max_sol}</div>
-            <div>Total Number of Photos: {manifestInfo.total_photos}</div>
+            <div className='col'>
+                <div><label>Rover Name</label> {manifestInfo.name}</div>
+                <div><label>Launched</label> {manifestInfo.launch_date}</div>
+                <div><label>Landed</label> {manifestInfo.landing_date}</div>
+                <div><label>Mission Status</label> <span className={manifestInfo.status ==='active' ? 'activestatus' : ''} >{manifestInfo.status}</span></div>
+            </div>
+            <div className='col'>
+                <div><label>Most Recent Photo</label> {manifestInfo.max_date}</div>
+                <div><label>Total Sol</label> {manifestInfo.max_sol}</div>
+                <div><label>Total Number of Photos</label> {manifestInfo.total_photos}</div>
+            </div>
         </>
     )
 }
@@ -87,11 +93,6 @@ const StarApiOne = () => {
     // Fetch rover info ==========================================================
     fetchNextSet.current = () => {
         fetchPhotoData(nextPageNumber, roverName, sol, apiKEY).then(randomData => {
-            
-            // console.log('page: ' + nextPageNumber)
-            // console.log('sol: ' + sol)
-            // console.log('rover: ' + roverName)
-            
             setNoImg(false);
 
             // Reset page and date when new rover is selected
@@ -120,7 +121,7 @@ const StarApiOne = () => {
             setRoverInfo(newInfos);
             setResetPageOnly(false)
 
-            console.log(roverInfo)
+            // console.log(roverInfo)
         })
     };
 
@@ -146,52 +147,68 @@ const StarApiOne = () => {
 
     return (
         <div data-scope-starapione>
+            <h1>NASA Mars Rover Photos</h1>
             <div className='imageControls'>
                 <div className='roverSelect'>
-                    <button onClick={() => {setRoverName('curiosity'); setResetDateAndPage(true)}}>Curiosity</button>
-                    <button onClick={() => {setRoverName('opportunity'); setResetDateAndPage(true)}}>Opportunity</button>
-                    <button onClick={() => {setRoverName('spirit'); setResetDateAndPage(true)}}>Spirit</button>
-                </div>
-
-                <div className='roverInfo'>
-                    {manifestInfo.length > 0 && extractManifest(manifestInfo[0])}
+                    <div className='buttons'>
+                        <button 
+                                className={roverName !== '' && roverName === 'curiosity' ? 'active' : ''}
+                                style={{backgroundImage: `url( ${process.env.PUBLIC_URL}/img/marsrover-curiosity.jpg )`}}
+                                title='Curiosity'
+                                onClick={() => {setRoverName('curiosity'); setResetDateAndPage(true)}} />
+                        <button 
+                                className={roverName !== '' && roverName === 'opportunity' ? 'active' : ''} 
+                                style={{backgroundImage: `url( ${process.env.PUBLIC_URL}/img/marsrover-opportunity.jpg )`}}
+                                title='Opportunity'
+                                onClick={() => {setRoverName('opportunity'); setResetDateAndPage(true)}} />
+                        <button 
+                                className={roverName !== '' && roverName === 'spirit' ? 'active' : ''} 
+                                style={{backgroundImage: `url( ${process.env.PUBLIC_URL}/img/marsrover-spirit.jpg )`}} 
+                                title='Spirit'
+                                onClick={() => {setRoverName('spirit'); setResetDateAndPage(true)}} />
+                    </div>
+                    <div className='roverInfo'>
+                        {manifestInfo.length > 0 && extractManifest(manifestInfo[0])}
+                    </div>
                 </div>
                 
-                <div className='solSelect'>
-                    Sol: {sol}<br />
-                    {
-                        sol > 0 ? 
-                        <button onClick={() => {setSol(sol - 1); setResetPageOnly(true); setClickedWith(`No photo taken on sol ${sol-1}.`)}}>Previous Sol</button> 
-                        : 
-                        <button disabled >Previous Sol</button>
-                    }
-                    {   
-                        manifestInfo.length > 0 && 
-                        sol < manifestInfo[0].max_sol ? 
-                        <button onClick={() => {setSol(sol + 1); setResetPageOnly(true); setClickedWith(`No photo taken on sol ${sol+1}.`)}}>Next Sol</button> 
-                        : 
-                        <button disabled >Next Sol</button>
-                    }
-                    <button onClick={() => {setSol(manifestInfo[0].max_sol); setResetPageOnly(true)}}>Most Recent Photos</button>
-                </div>
+                <div className='navigation'>
+                    <div className='solSelect'>
+                        <div><label>Sol</label> {sol} <span>Solar day on Mars (24h, 39m, 35s)</span></div>
+                        {
+                            sol > 0 ? 
+                            <button onClick={() => {setSol(sol - 1); setResetPageOnly(true); setClickedWith(`No photo taken on sol ${sol-1}.`)}}>Previous Sol</button> 
+                            : 
+                            <button disabled >Previous Sol</button>
+                        }
+                        {   
+                            manifestInfo.length > 0 && 
+                            sol < manifestInfo[0].max_sol ? 
+                            <button onClick={() => {setSol(sol + 1); setResetPageOnly(true); setClickedWith(`No photo taken on sol ${sol+1}.`)}}>Next Sol</button> 
+                            : 
+                            <button disabled >Next Sol</button>
+                        }
+                        <button onClick={() => {setSol(manifestInfo[0].max_sol); setResetPageOnly(true)}}>Most Recent Photos</button>
+                        
+                    </div>
 
-                <div className='pagination'>
-                    {nextPageNumber}<br />
-                    {
-                        nextPageNumber > 1 ? 
-                        <button onClick={() => {setNextPageNumber(nextPageNumber - 1); setClickedWith('No images available on this page.')}}>Previous Page</button> 
-                        : 
-                        <button disabled >Previous Page</button>
-                    }
-                    {
-                        roverInfo.length > 0 ? 
-                        <button onClick={() => {setNextPageNumber(nextPageNumber + 1); setClickedWith(`End of images on sol ${sol}.`)}}>Next Page</button>
-                        : 
-                        <button disabled >Next Page</button>
-                    }
-                    
-                    {roverInfo.length > 0 && getPhotoDates(roverInfo[0])}
+                    <div className='pagination'>
+                        <div><label>Page</label> {roverInfo.length > 0 ? nextPageNumber : 'unavailable'}</div>
+                        {
+                            nextPageNumber > 1 ? 
+                            <button onClick={() => {setNextPageNumber(nextPageNumber - 1); setClickedWith('No images available on this page.')}}>Previous Page</button> 
+                            : 
+                            <button disabled >Previous Page</button>
+                        }
+                        {
+                            roverInfo.length > 0 ? 
+                            <button onClick={() => {setNextPageNumber(nextPageNumber + 1); setClickedWith(`End of images on sol ${sol}.`)}}>Next Page</button>
+                            : 
+                            <button disabled >Next Page</button>
+                        }
+                    </div>
                 </div>
+                {roverInfo.length > 0 && getPhotoDates(roverInfo[0])}
             </div>
             
             <div id="nasaimages">

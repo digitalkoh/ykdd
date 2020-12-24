@@ -19,10 +19,14 @@ footer{
         text-align: left;
         color: #999;
         .flogo{
+            transition: .5s;
             font-size: calc(22px + 1.8vmin);
             font-family: 'Anton', sans-serif;
             color: #eee;
-            margin-right: 12px
+            margin-right: 12px;
+            &:hover{
+                color: #f8981b
+            }
         }
     }
 
