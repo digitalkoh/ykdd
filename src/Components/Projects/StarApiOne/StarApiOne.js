@@ -89,6 +89,16 @@ const StarApiOne = () => {
 
     const fetchNextSet = useRef(() => {});
     const fetchNextMani = useRef(() => {});
+    const jumpToSol = useRef(() => {});
+    const jumpToInput = useRef();
+
+    // Jump to Sol ==========================================================
+    jumpToSol.current = () => {
+        const maxsol = manifestInfo[0].max_sol;
+        let gotonum = parseInt(jumpToInput.current.value);
+        gotonum > maxsol && alert('Sol date cannot be greater than the total number of sol days ' + manifestInfo[0].name + ' was on Mars. ' + manifestInfo[0].name + ' was on mars for ' + maxsol + ' sol days.');
+        gotonum <= maxsol && setSol(gotonum); setResetPageOnly(true);
+    }
 
     // Fetch rover info ==========================================================
     fetchNextSet.current = () => {
@@ -107,6 +117,9 @@ const StarApiOne = () => {
             // Reset to oage 1 on new SOL date
             if(resetPageOnly) {
                 setNextPageNumber(1);
+
+                // Clear jump to input
+                jumpToInput.current.value = null
             }
 
             if (randomData === undefined) return;
@@ -119,7 +132,7 @@ const StarApiOne = () => {
                 ...randomData.photos
             ]
             setRoverInfo(newInfos);
-            setResetPageOnly(false)
+            setResetPageOnly(false);
 
             // console.log(roverInfo)
         })
@@ -141,9 +154,25 @@ const StarApiOne = () => {
         fetchNextSet.current();
     }, [nextPageNumber, roverName, sol])
 
+    // Grab new manifest if rover has changed
     useEffect(() => {
         fetchNextMani.current();
     }, [roverName])
+
+
+    // Submit Jump on 'Enter' key
+    useEffect(() => {
+        const listener = event => {
+            if (event.code === "Enter" || event.code === "NumpadEnter") {
+                jumpToSol.current()
+            }
+        };
+        document.addEventListener("keydown", listener);
+
+        return () => {
+            document.removeEventListener("keydown", listener);
+        };
+    }, []);
 
     return (
         <div data-scope-starapione>
@@ -175,21 +204,27 @@ const StarApiOne = () => {
                 <div className='navigation'>
                     <div className='solSelect'>
                         <div><label>Sol</label> {sol} <span>Solar day on Mars (24h, 39m, 35s)</span></div>
-                        {
-                            sol > 0 ? 
-                            <button onClick={() => {setSol(sol - 1); setResetPageOnly(true); setClickedWith(`No photo taken on sol ${sol-1}.`)}}>Previous Sol</button> 
-                            : 
-                            <button disabled >Previous Sol</button>
-                        }
-                        {   
-                            manifestInfo.length > 0 && 
-                            sol < manifestInfo[0].max_sol ? 
-                            <button onClick={() => {setSol(sol + 1); setResetPageOnly(true); setClickedWith(`No photo taken on sol ${sol+1}.`)}}>Next Sol</button> 
-                            : 
-                            <button disabled >Next Sol</button>
-                        }
-                        <button onClick={() => {setSol(manifestInfo[0].max_sol); setResetPageOnly(true)}}>Most Recent Photos</button>
-                        
+                        <div style={{display: 'flex'}}>
+                            {
+                                sol > 0 ? 
+                                <button onClick={() => {setSol(sol - 1); setResetPageOnly(true); setClickedWith(`No photo taken on sol ${sol-1}.`)}}>Previous Sol</button> 
+                                : 
+                                <button disabled >Previous Sol</button>
+                            }
+                            {   
+                                manifestInfo.length > 0 && 
+                                sol < manifestInfo[0].max_sol ? 
+                                <button onClick={() => {setSol(sol + 1); setResetPageOnly(true); setClickedWith(`No photo taken on sol ${sol+1}.`)}}>Next Sol</button> 
+                                : 
+                                <button disabled >Next Sol</button>
+                            }
+                            <button onClick={() => {setSol(manifestInfo[0].max_sol); setResetPageOnly(true)}}>Most Recent Photos</button>
+
+                            <div>
+                                <input type='number' placeholder='Sol #' ref={jumpToInput} className='jumpto' />
+                                <button onClick={() => {jumpToSol.current()}}>Go</button>
+                            </div>
+                        </div>
                     </div>
 
                     <div className='pagination'>
