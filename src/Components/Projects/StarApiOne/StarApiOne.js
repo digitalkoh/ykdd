@@ -23,27 +23,6 @@ const fetchManifests = (rover, apiKey) => {
         })
 } 
 
-// { "photos": [ 
-//     { 
-//         "id": 102685, 
-//         "sol": 1004, 
-//         "camera": { 
-//             "id": 20, 
-//             "name": "FHAZ", 
-//             "rover_id": 5, 
-//             "full_name": "Front Hazard Avoidance Camera" 
-//         }, 
-//         "img_src": "http://mars.jpl.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/01004/opgs/edr/fcam/FLB_486615455EDR_F0481570FHAZ00323M_.JPG", 
-//         "earth_date": "2015-06-03", 
-//         "rover": { 
-//             "id": 5, 
-//             "name": "Curiosity", 
-//             "landing_date": "2012-08-06", 
-//             "launch_date": "2011-11-26", 
-//             "status": "active" 
-//         } 
-//     }
-
 const getPhotoDates = (roverInfo) => {
     //const {sol, earth_date, camera: {full_name, name}, rover: {landing_date, launch_date, status, name}} = roverInfo;
     return  (
@@ -92,11 +71,20 @@ const StarApiOne = () => {
     const jumpToSol = useRef(() => {});
     const jumpToInput = useRef();
 
+    const scrollTo = () => {
+        window.scrollTo({
+            top: 172,
+            behavior: 'smooth'
+        });
+    
+        // console.log(window.pageYOffset);
+    };
+
     // Jump to Sol ==========================================================
     jumpToSol.current = () => {
         const maxsol = manifestInfo[0].max_sol;
         let gotonum = parseInt(jumpToInput.current.value);
-        gotonum > maxsol && alert('Sol date cannot be greater than the total number of sol days ' + manifestInfo[0].name + ' was on Mars. ' + manifestInfo[0].name + ' was on mars for ' + maxsol + ' sol days.');
+        gotonum > maxsol && alert(`Sol date cannot be greater than the total number of sol days ${manifestInfo[0].name} was on Mars. ${manifestInfo[0].name} was on mars for ${maxsol} sol days.`);
         gotonum <= maxsol && setSol(gotonum); setResetPageOnly(true);
     }
 
@@ -105,16 +93,20 @@ const StarApiOne = () => {
         fetchPhotoData(nextPageNumber, roverName, sol, apiKEY).then(randomData => {
             setNoImg(false);
 
+            if (window.pageYOffset > 240) {
+                scrollTo()
+            }
+
             // Reset page and date when new rover is selected
             if(resetDateAndPage) {
                 setNextPageNumber(1);
                 // Opportunity and Spirit do not have any photos on SOL 0, therefore, default to 1.
                 roverName === 'opportunity' || 'spirit' ? setSol(1) : setSol(0);
 
-                setResetDateAndPage(false)
+                setResetDateAndPage(false);
             }
 
-            // Reset to oage 1 on new SOL date
+            // Reset to page 1 on new SOL date
             if(resetPageOnly) {
                 setNextPageNumber(1);
 
