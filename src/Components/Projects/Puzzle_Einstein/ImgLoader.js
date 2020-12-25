@@ -19,7 +19,7 @@ class ImgLoader extends Component {
 
     render() {
         return (
-            <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center'}}>
+            <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', flexWrap: 'wrap'}}>
                 {imgData.images.map(i => 
                     {
                         let activeClass = i === this.props.pic ? 'bt-imgSelect active' : 'bt-imgSelect';
