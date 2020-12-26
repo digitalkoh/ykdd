@@ -5,6 +5,7 @@ import Paginator from './Paginator';
 import SolSelector from './SolSelector';
 import RoverButton from './RoverButton';
 import NasaImages from './NasaImages';
+import { bunho } from '../Temp';
 import { GetPhotoDates } from './GetPhotoDates';
 import { ExtractManifest } from './ExtractManifest';
 import { ProjectFooter } from './ProjectFooter';
@@ -40,7 +41,7 @@ const StarApiOne = () => {
     const [noImg, setNoImg] = useState(false);
     const [clickedWith, setClickedWith] = useState('');
     // const [camera, setCamera] = useState('fhaz');
-    const apiKEY = 'DEMO_KEY';
+    const apiKEY = bunho;
 
     const fetchNextSet = useRef(() => {});
     const fetchNextMani = useRef(() => {});
