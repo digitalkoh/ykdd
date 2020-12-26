@@ -9,7 +9,7 @@ import { bunho } from '../Temp';
 import { GetPhotoDates } from './GetPhotoDates';
 import { ExtractManifest } from './ExtractManifest';
 import { ProjectFooter } from './ProjectFooter';
-import { scrollTo } from './ScrollTo';
+import { scrollTo } from '../../GlobalScrollTo';
 const { useState, useEffect, useRef } = React;
 
 const fetchPhotoData = (pageNumber, rover, solDate, apiKey) => {
@@ -74,7 +74,7 @@ const StarApiOne = () => {
             setNoImg(false);
 
             if (window.pageYOffset > 240) {
-                scrollTo()
+                scrollTo(320)
             }
 
             // Reset page and date when new rover is selected

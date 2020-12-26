@@ -1,4 +1,5 @@
 import './css/footer.css';
+import { scrollTo } from '../GlobalScrollTo';
 
 function Footer() {
 
@@ -8,7 +9,7 @@ function Footer() {
   return (
       <footer>
           <div className="copy">
-              <div className="flogo" style={{cursor: 'pointer'}} onClick={() => window.location.href = "/#/"}>YKDD</div>  
+              <div className="flogo" style={{cursor: 'pointer'}} onClick={() => {window.location.href = "/#/"; scrollTo(0)}}>YKDD</div>  
               <div>YOUNG KOH DESIGN // DIGITAL <br />a young koh project &copy; 2006 ~ {yr}</div>
             </div>
           <div className="sites">
