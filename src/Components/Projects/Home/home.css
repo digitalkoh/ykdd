@@ -1,16 +1,16 @@
-
-#home{
-    cursor:pointer;
-    padding: 1vmin 12vmin;
-}
-#home h3{
-    font-size: calc(2.4em + 16vmin);
-    opacity: .8;
-    letter-spacing: -24px;
-    white-space: nowrap
+#home {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
-#home h3.clickanywhere{
-     font-size: calc(1em + 3vmin);
-     white-space: pre-wrap
+#home .App-header {
+    margin: auto;
+    position: sticky;
+    top: 40px;
+}
+
+#home .App-header nav ul li a{
+    padding: calc(12px + 4vmin) calc(12px + 3vmin);
+    /* border: solid 1px rgba(255, 166, 0, .5); */
 }

@@ -51,6 +51,7 @@ function ProjectPuzzleEinstein() {
     
     return (
         <>
+            <h1>Image Puzzle</h1>
             <Board puzzleType={puzzleType} showNumber={showNumber} newArr={newArr} pic={pic} reset={reset} />
 
             <div className="controls">

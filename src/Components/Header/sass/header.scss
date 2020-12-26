@@ -1,28 +1,16 @@
-$dark-grey: rgb(40, 44, 52);
+$dark-grey: rgba(40, 44, 52, .9);
 $green: rgb(117, 214, 7);
-$orange: rgb(248, 152, 27);
+$orange: rgba(248, 152, 27, .8);
 
 .App-header {
-    z-index: 999;
+    z-index: 9999;
     display: flex;
-    justify-content: space-between;
-    position: sticky;
-    position: -webkit-sticky;
-    top: 0;
-    font-size: calc(12px + 2vmin);
-    padding: 0 12vmin;
+    transform: translateY(80%)
 }
 
 nav{
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    width: 100vw;
-    // background-color: rgba(242, 242, 242, .6);
-
-    @media only screen and (max-width: 1280px) {
-        justify-content: center;
-    }
+    // display: flex;
+    // align-items: center;
 
     ul li{
        list-style: none;
@@ -31,26 +19,75 @@ nav{
            display: inline-flex;
            align-items: center;
            justify-content: center;
-           border-radius: 100%;
            font-size: calc(10px + 1vmin);
+           padding: calc(1px + .5vmin) calc(4px + 1.4vmin);
            font-weight: 600;
-           width: 38px;
-           height: 38px;
            background-color: $dark-grey;
-           color: #888;
+           color: #eee;
            margin: 6px;
            transition: .6s;
-           &:hover{background-color: lighten($dark-grey, 28%); color: #fff}
-        //    &.active{background-color: darken($green, 6%); color: #fff}
+           &:hover{background-color: darken($dark-grey, 8%); color: #fff}
            &.active{background-color: $orange; color: #fff}
-
 
            @media only screen and (max-width: 778px) {
                 font-size: 18px;
                 font-weight: 600;
-                width: 36px;
-                height: 36px;
            }
        } 
+    }
+}
+
+#navOpen {display: none}
+
+#projects {
+    #navOpen {
+        display: block;
+        position: absolute;
+        padding: 12px 24px;
+        background-color: rgb(248, 152, 27);
+        color: #222;
+        margin-left: -30px;
+        transform: rotate(-90deg);
+        cursor: pointer;
+        transition: .4s;
+        &:hover {background-color: darken(rgb(248, 152, 27), 15%); color: #fff} 
+    }
+
+    .App-header {
+        display: block;
+        position: fixed;
+        left: 0; 
+        bottom: 120px;
+
+        nav{
+            //display:none;
+            transition: .5s;
+            margin-left: -800px;
+            background-color: #000;
+            padding-right: 100px;
+            padding-left: 50px;
+            &.active {margin-left: 0}
+
+            #navClose {
+                position: absolute;
+                right: 20px;
+                top: 20px;
+                font-size: 1.4em;
+                cursor: pointer;
+                color: #f00;
+                transition: .4s;
+                &:hover {color: #fff}
+            }
+
+            ul li{
+                a{
+                    padding: calc(4px + 1.3vmin) calc(4px + 1.4vmin);
+                    font-size: calc(8px + .8vmin);
+                    @media only screen and (max-width: 778px) {
+                            font-size: 16px;
+                    }
+                } 
+            }
+        }
     }
 }

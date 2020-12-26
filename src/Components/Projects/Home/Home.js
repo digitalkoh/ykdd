@@ -1,47 +1,33 @@
 import React, { Component } from 'react';
+import Header from '../../Header/Header';
 import './home.css';
 
-class Home extends Component {
+const divstyle = {
+    width: '100%',
+    height: '100vh',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'repeat-y',
+    backgroundPosition: '50%',
+    position: 'absolute',
+    top: '0'
+};
 
+class Home extends Component {
     handleScroll() {
-        const target = document.getElementsByTagName("h3");
+        const target = document.querySelectorAll(".pdiv");
 
         let i = 0, length = target.length;
-        let ls = (-24) + (window.pageYOffset/5);
 
         for (i; i < length; i++) {
-
             // Divide by 2 for smaller increments
-            let pos = (window.pageYOffset/2) * target[i].dataset.rate;
-            
+            let pos = (window.pageYOffset) * target[i].dataset.rate;
             target[i].style.transform = 'translate3d(0px, ' + pos + 'px, 0px)';
-        
-            // For horizontal direction
-            // let posX = window.pageYOffset * target[index].dataset.ratex;
-            // let posY = window.pageYOffset * target[index].dataset.ratey;
-            // target[index].style.transform = 'translate3d(' + posX + 'px, ' + posY + 'px, 0px)';
-
-            if(i === length-1){
-                if(ls < 8) {
-                    target[i].style.letterSpacing = ls + 'px';
-                }
-            } else {
-                if(ls < 12) {
-                    target[i].style.letterSpacing = ls + 'px';
-                }
-            }
+            target[1].style.opacity = 'translate3d(0px, ' + pos + 'px, 0px)';
         }
-
-        //console.log(ls)
-    }
-
-    moveLocation() {
-        window.location.href = "/#/project/p1";
     }
 
     componentDidMount(){
         window.addEventListener('scroll', this.handleScroll);
-        document.getElementById('home').addEventListener('click', this.moveLocation);
     }
 
     componentWillUnmount() {
@@ -50,12 +36,15 @@ class Home extends Component {
 
     render() {
         return(
-            <div id="home" style={{paddingTop: "80px"}}>
-                <h3 style={{color: "#6a97a3"}} data-rate="1">Digital</h3>
-                <h3 style={{color: "#6a89a3"}} data-rate="-.05">Design</h3>
-                <h3 style={{color: "#6a76a3"}} data-rate="-1">&amp; Functionality</h3>
-                <h3 style={{color: "#7e6aa3"}} data-rate="-2">Experiment</h3>
-                <h3 style={{color: "#333"}} className="clickanywhere" data-rate="-2.2">Click anywhere to continue</h3>
+            <div id="home">
+                <h1>Young Koh Design</h1>
+                <h2>UI Designer &amp; Engineer</h2>
+                <p>React, Javascript, ES6, JSX, Node, CSS, SASS, HTML, Polymer, Angular, Typescript, XML, JSON, PHP, MYSQL, Sketch, Photoshop, Illustrator, InDesign, Figma, Jira</p>
+                <Header />
+                <div className='pdiv' style={{...divstyle, backgroundImage: `url( ${process.env.PUBLIC_URL}/img/intro_img2.jpg)`}} data-rate=".6"></div>
+                <div className='pdiv' style={{...divstyle, backgroundImage: `url( ${process.env.PUBLIC_URL}/img/intro_img1.png)`, opacity: '.7'}} data-rate=".8"></div>
+                
+                <div style={{height: '1000px'}}></div>
             </div>
         )
     }

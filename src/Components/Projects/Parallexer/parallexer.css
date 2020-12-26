@@ -1,0 +1,15 @@
+
+#parallexer{
+    padding: 1vmin 12vmin;
+}
+#parallexer h3{
+    font-size: calc(2.4em + 16vmin);
+    opacity: .8;
+    letter-spacing: -24px;
+    white-space: nowrap
+}
+
+#parallexer h3.clickanywhere{
+     font-size: calc(1em + 3vmin);
+     white-space: pre-wrap
+}
