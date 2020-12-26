@@ -6,8 +6,13 @@
 
 #home .App-header {
     margin: auto;
+    position: -webkit-sticky;
     position: sticky;
     top: 40px;
+}
+
+#home .App-header nav #navClose {
+    display: none;
 }
 
 #home .App-header nav ul li a{
