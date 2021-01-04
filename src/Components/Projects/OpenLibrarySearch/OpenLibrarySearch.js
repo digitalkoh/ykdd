@@ -5,10 +5,13 @@ import ProjectFooter from './ProjectFooter'
 import { scrollTo } from '../../GlobalScrollTo';
 import { LinearProgress, TextField, Button } from '@material-ui/core'
 import { v4 as uuidV4 } from 'uuid'
+import Modal from './Modal'
 
 export default function OpenLibrarySearch() {
     const [query, setQuery] = useState('')
     const [pageNumber, setPageNumber] = useState(1)
+    const [modal, setModal] = useState(false)
+    const [bookKey, setBookKey] = useState()
 
     const {
         books,
@@ -36,6 +39,15 @@ export default function OpenLibrarySearch() {
         scrollTo(0)
     }
 
+    function openModal(key) {
+        setBookKey(key)
+        setModal(true)
+    }
+
+    function closeModal() {
+        setModal(false)
+    }
+
     return (
         <div data-scope-openlib className='container'>
             <div className='top'>
@@ -46,8 +58,8 @@ export default function OpenLibrarySearch() {
             <div className='results'> 
                 {books.map((book, index) => {
                     let display = 
-                        <div className='book-row'>
-                            <div><img src={`http://covers.openlibrary.org/b/ID/${book.cover_i}-S.jpg`} /></div>
+                        <div className='book-row' onClick={() => openModal(book.key)}>
+                            <div><img alt={`Thumbnail for ${book.title}`} src={`http://covers.openlibrary.org/b/ID/${book.cover_i}-S.jpg`} /></div>
                             <div className='book-title'>{book.title}</div>
                             <div className='book-author'><span>Author</span> {book.author_name}</div>
                             <div className='book-date'><span>First Publish Year</span> {book.first_publish_year}</div>
@@ -69,12 +81,17 @@ export default function OpenLibrarySearch() {
                         <LinearProgress />
                     </div>
                 }
+
                 <div>
                     {error && <Button onClick={() => setPageNumber(1)}>Reset</Button>}
                 </div>
             </div>
 
             <ProjectFooter />
+
+            {modal && <Modal closeModal={closeModal} bookKey={bookKey} />}
+
+            
         </div>
     )
 }

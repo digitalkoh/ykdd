@@ -50,5 +50,8 @@
 [data-scope-openlib] .book-row .book-resultnum::before {
   content: "Result # ";
 }
+[data-scope-openlib] .book-modalContainer {
+  z-index: 99;
+}
 
 /*# sourceMappingURL=style.css.map */

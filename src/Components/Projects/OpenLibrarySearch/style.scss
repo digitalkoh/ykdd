@@ -48,4 +48,8 @@
             &::before {content: 'Result # '}
         }
     }
+
+    .book-modalContainer {
+        z-index: 99;
+    }
 }
