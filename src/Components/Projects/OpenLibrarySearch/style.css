@@ -1,0 +1,54 @@
+/* scope [data-scope-openlib] */
+[data-scope-openlib] {
+  font-family: "Roboto", sans-serif;
+}
+[data-scope-openlib].container {
+  width: 100%;
+  background-color: #fff;
+  color: #555;
+}
+[data-scope-openlib] .top {
+  z-index: 2;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  background-color: rgba(241, 241, 207, 0.94);
+}
+[data-scope-openlib] .results {
+  width: 90vw;
+  margin: auto;
+  min-height: 60vh;
+  padding: 40px;
+}
+[data-scope-openlib] .book-row {
+  position: relative;
+  padding: 20px 8px;
+  border-bottom: solid 1px #ddd;
+  cursor: pointer;
+  transition: 0.4s;
+}
+[data-scope-openlib] .book-row div span {
+  color: #aaa;
+  font-size: 84%;
+}
+[data-scope-openlib] .book-row:hover {
+  background-color: #f3f3f3;
+}
+[data-scope-openlib] .book-row .book-title {
+  font-size: 1.2em;
+}
+[data-scope-openlib] .book-row .book-resultnum {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  color: #aaa;
+  font-size: 80%;
+}
+[data-scope-openlib] .book-row .book-resultnum::before {
+  content: "Result # ";
+}
+
+/*# sourceMappingURL=style.css.map */

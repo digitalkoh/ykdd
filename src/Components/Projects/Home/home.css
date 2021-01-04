@@ -19,3 +19,7 @@
     padding: calc(12px + 4vmin) calc(12px + 3vmin);
     /* border: solid 1px rgba(255, 166, 0, .5); */
 }
+
+#home .App-header nav ul li:first-child{
+    display: none
+}

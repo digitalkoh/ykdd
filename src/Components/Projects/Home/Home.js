@@ -37,9 +37,9 @@ class Home extends Component {
     render() {
         return(
             <div id="home">
-                <h1>Young Koh Design</h1>
-                <h2>UI Designer &amp; Engineer</h2>
-                <p>React, Javascript, ES6, JSX, Node, CSS, SASS, HTML, Polymer, Angular, Typescript, XML, JSON, PHP, MYSQL, Sketch, Photoshop, Illustrator, InDesign, Figma, Jira</p>
+                <h1 style={{color: '#fff'}}>Young Koh Design</h1>
+                <h2 style={{color: '#fff'}}>UI Designer &amp; Engineer</h2>
+                <p style={{color: '#fff'}}>React, Javascript, ES6, JSX, Node, CSS, SASS, HTML, Polymer, Angular, Typescript, XML, JSON, PHP, MYSQL, Sketch, Photoshop, Illustrator, InDesign, Figma, Jira</p>
                 <Header />
                 <div className='pdiv' style={{...divstyle, backgroundImage: `url( ${process.env.PUBLIC_URL}/img/intro_img2.jpg)`}} data-rate=".6"></div>
                 <div className='pdiv' style={{...divstyle, backgroundImage: `url( ${process.env.PUBLIC_URL}/img/intro_img1.png)`, opacity: '.7'}} data-rate=".8"></div>

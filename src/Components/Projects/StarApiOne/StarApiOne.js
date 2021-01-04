@@ -126,7 +126,7 @@ const StarApiOne = () => {
     }, [roverName])
 
     return (
-        <div data-scope-starapione>
+        <div data-scope-starapione id='starapione'>
             <h1>NASA Mars Rover Photos</h1>
             <div className='imageControls'>
                 <div className='roverSelect'>
