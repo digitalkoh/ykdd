@@ -41,6 +41,8 @@
 
         .book-title { 
             font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 4px;
         }
 
         .book-resultnum { 
@@ -51,5 +53,101 @@
 
     .book-modalContainer {
         z-index: 99;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.24);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .book-modal {
+        position: absolute;
+        background: #fff;
+        padding: 60px 20px;
+        border: 2px solid #bbb;
+        max-width: 88vw;
+        min-width: 88vmin;
+        max-height: 80vh;
+        overflow: scroll;
+        /* width */
+        &::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        &::-webkit-scrollbar-track {
+            background: #fff; 
+        }
+        
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+            background: #888; 
+        }
+
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+            background: #555; 
+        }
+
+        .modalHeader {
+            position: sticky;
+            top: 0;
+        }
+
+        .closeBt {
+            background-color: transparent;
+            border: 0;
+            position: absolute;
+            right: 0;
+            top: -48px;
+            padding: 0;
+            outline: none;
+            .closeX {
+                cursor: pointer;
+                height: 50px;
+                width: 50px;
+                transition: .4s;
+                color: #777;
+                &:hover {color: #000}
+            }
+        }
+
+        .book-detail-wrapper { max-width: 60vw }
+
+        .book-cover {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img {max-height: 360px;}
+        }
+
+        .book-title {
+            margin-top: 12px;
+            margin-bottom: 4px;
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        .book-author, .book-date {
+            span { 
+                color: #aaa;
+                &::after {content: ': '; padding-right: 8px}
+            }
+        }
+
+        .book-desc, .book-subject {
+            border-top: solid 1px #ddd;
+            padding-top: 20px;
+            margin-top: 20px;
+            span {
+                display: block; 
+                color: #aaa;
+                &::after {content: ': ';}
+            }
+        }
     }
 }

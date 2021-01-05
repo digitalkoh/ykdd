@@ -39,6 +39,8 @@
 }
 [data-scope-openlib] .book-row .book-title {
   font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 4px;
 }
 [data-scope-openlib] .book-row .book-resultnum {
   position: absolute;
@@ -52,6 +54,100 @@
 }
 [data-scope-openlib] .book-modalContainer {
   z-index: 99;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.24);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+[data-scope-openlib] .book-modal {
+  position: absolute;
+  background: #fff;
+  padding: 60px 20px;
+  border: 2px solid #bbb;
+  max-width: 88vw;
+  min-width: 88vmin;
+  max-height: 80vh;
+  overflow: scroll;
+  /* width */
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+[data-scope-openlib] .book-modal::-webkit-scrollbar {
+  width: 10px;
+}
+[data-scope-openlib] .book-modal::-webkit-scrollbar-track {
+  background: #fff;
+}
+[data-scope-openlib] .book-modal::-webkit-scrollbar-thumb {
+  background: #888;
+}
+[data-scope-openlib] .book-modal::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+[data-scope-openlib] .book-modal .modalHeader {
+  position: sticky;
+  top: 0;
+}
+[data-scope-openlib] .book-modal .closeBt {
+  background-color: transparent;
+  border: 0;
+  position: absolute;
+  right: 0;
+  top: -48px;
+  padding: 0;
+  outline: none;
+}
+[data-scope-openlib] .book-modal .closeBt .closeX {
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  transition: 0.4s;
+  color: #777;
+}
+[data-scope-openlib] .book-modal .closeBt .closeX:hover {
+  color: #000;
+}
+[data-scope-openlib] .book-modal .book-detail-wrapper {
+  max-width: 60vw;
+}
+[data-scope-openlib] .book-modal .book-cover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+[data-scope-openlib] .book-modal .book-cover img {
+  max-height: 360px;
+}
+[data-scope-openlib] .book-modal .book-title {
+  margin-top: 12px;
+  margin-bottom: 4px;
+  font-size: 1.8em;
+  font-weight: bold;
+}
+[data-scope-openlib] .book-modal .book-author span, [data-scope-openlib] .book-modal .book-date span {
+  color: #aaa;
+}
+[data-scope-openlib] .book-modal .book-author span::after, [data-scope-openlib] .book-modal .book-date span::after {
+  content: ": ";
+  padding-right: 8px;
+}
+[data-scope-openlib] .book-modal .book-desc, [data-scope-openlib] .book-modal .book-subject {
+  border-top: solid 1px #ddd;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+[data-scope-openlib] .book-modal .book-desc span, [data-scope-openlib] .book-modal .book-subject span {
+  display: block;
+  color: #aaa;
+}
+[data-scope-openlib] .book-modal .book-desc span::after, [data-scope-openlib] .book-modal .book-subject span::after {
+  content: ": ";
 }
 
 /*# sourceMappingURL=style.css.map */

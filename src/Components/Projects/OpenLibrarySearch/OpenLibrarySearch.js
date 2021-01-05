@@ -6,12 +6,13 @@ import { scrollTo } from '../../GlobalScrollTo';
 import { LinearProgress, TextField, Button } from '@material-ui/core'
 import { v4 as uuidV4 } from 'uuid'
 import Modal from './Modal'
+import CloseIcon from '@material-ui/icons/Close';
 
 export default function OpenLibrarySearch() {
     const [query, setQuery] = useState('')
     const [pageNumber, setPageNumber] = useState(1)
     const [modal, setModal] = useState(false)
-    const [bookKey, setBookKey] = useState()
+    const [bookDetail, setBookDetail] = useState({})
 
     const {
         books,
@@ -39,8 +40,8 @@ export default function OpenLibrarySearch() {
         scrollTo(0)
     }
 
-    function openModal(key) {
-        setBookKey(key)
+    function openModal(bookKey, bookAuthor, bookYear, bookCover) {
+        setBookDetail({ bookKey, bookAuthor, bookYear, bookCover })
         setModal(true)
     }
 
@@ -52,17 +53,17 @@ export default function OpenLibrarySearch() {
         <div data-scope-openlib className='container'>
             <div className='top'>
                 <TextField style={{width: '60%'}} value={query} onChange={handleSearch} label="Search the library..." />
-                <Button size="small" color='primary' onClick={() => setQuery('')}>Clear</Button>
+                <Button size="small" color='primary' onClick={() => setQuery('')}><CloseIcon className='clearX' /></Button>
             </div>
             
             <div className='results'> 
                 {books.map((book, index) => {
                     let display = 
-                        <div className='book-row' onClick={() => openModal(book.key)}>
+                        <div className='book-row' onClick={() => openModal(book.key, book.author_name, book.first_publish_year, book.cover_i)}>
                             <div><img alt={`Thumbnail for ${book.title}`} src={`http://covers.openlibrary.org/b/ID/${book.cover_i}-S.jpg`} /></div>
                             <div className='book-title'>{book.title}</div>
-                            <div className='book-author'><span>Author</span> {book.author_name}</div>
-                            <div className='book-date'><span>First Publish Year</span> {book.first_publish_year}</div>
+                            <div className='book-author'><span>Author</span> {book.author_name && book.author_name.join(', ')}</div>
+                            <div className='book-date'><span>First Publish Year</span> {book.first_publish_year && book.first_publish_year}</div>
                             {/* <div className='book-date'><span>Published</span> {[book.publish_date.map(d => d).join(', ')]}</div> */}
                             <div className='book-resultnum'>{index + 1}</div>
                         </div>
@@ -89,7 +90,7 @@ export default function OpenLibrarySearch() {
 
             <ProjectFooter />
 
-            {modal && <Modal closeModal={closeModal} bookKey={bookKey} />}
+            {modal && <Modal closeModal={closeModal} bookDetail={bookDetail} />}
 
             
         </div>
