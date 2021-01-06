@@ -22,6 +22,7 @@ export default function Modal({ closeModal, bookDetail }) {
             method: 'GET',
             url: `https://openlibrary.org${bookKey}.json`
         }).then(res => {
+            // returns '/works/OLxxxxxxx'
             setMoreDetail({ ...res.data })
         }).catch((err) => {
             console.log(err)
@@ -41,6 +42,7 @@ export default function Modal({ closeModal, bookDetail }) {
                     {bookYear && <div className='book-date'><span>First Publish Year</span> {bookYear}</div>}
                     {moreDetail.description && <div className='book-desc'><span>Description</span> {moreDetail.description.value}</div>}
                     {moreDetail.subjects && <div className='book-subject'><span>Subjects</span> {moreDetail.subjects.join(', ')}</div>}
+                    {/* <div className='book-link'><a href={`https://openlibrary.org${moreDetail.key}/`} >Open Library Link</a></div> */}
                 </div>
             </div>
         </div>

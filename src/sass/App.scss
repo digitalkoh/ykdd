@@ -36,4 +36,14 @@ p {
     text-align: center;
     margin-top: 80px;
     padding: 30px 20px 300px 20px;
+
+    a {
+        padding: 2px 0;
+        color: inherit;
+        border-bottom: dashed 2px #999;
+        &:hover { 
+            color: #333;
+            border-style: solid    
+        }
+    }
 }

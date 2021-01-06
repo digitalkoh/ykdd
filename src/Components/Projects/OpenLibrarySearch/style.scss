@@ -1,7 +1,6 @@
-/* scope [data-scope-openlib] */
-
 [data-scope-openlib] {
     font-family: 'Roboto', sans-serif;
+    .hide { display: none }
 
     &.container {
         width: 100%;
@@ -21,6 +20,7 @@
         // box-shadow: 0 3px 6px #bbb;
     }
 
+    // Normal Search Results *************************************************************************************
     .results {
         width: 90vw;
         margin: auto;
@@ -51,6 +51,27 @@
         }
     }
 
+    // Fav Books *********************************************************************************************
+    .favBook {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        .book-row {
+            text-align: center;
+            padding: 20px 40px;
+            border: none;
+            img {
+                height: 250px;
+                @media only screen and (max-width: 800px) {
+                    height: 160px;
+                }
+            }
+        }
+    }
+
+    // Modal *********************************************************************************************
     .book-modalContainer {
         z-index: 99;
         position: fixed;
@@ -115,8 +136,6 @@
                 &:hover {color: #000}
             }
         }
-
-        .book-detail-wrapper { max-width: 60vw }
 
         .book-cover {
             display: flex;

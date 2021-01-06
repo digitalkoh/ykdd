@@ -7,6 +7,7 @@ import { LinearProgress, TextField, Button } from '@material-ui/core'
 import { v4 as uuidV4 } from 'uuid'
 import Modal from './Modal'
 import CloseIcon from '@material-ui/icons/Close';
+import Favorites from './Favorites'
 
 export default function OpenLibrarySearch() {
     const [query, setQuery] = useState('')
@@ -53,7 +54,7 @@ export default function OpenLibrarySearch() {
         <div data-scope-openlib className='container'>
             <div className='top'>
                 <TextField style={{width: '60%'}} value={query} onChange={handleSearch} label="Search the library..." />
-                <Button size="small" color='primary' onClick={() => setQuery('')}><CloseIcon className='clearX' /></Button>
+                <Button size="small" color='primary' onClick={() => {setQuery(''); scrollTo(0)}}><CloseIcon className='clearX' /></Button>
             </div>
             
             <div className='results'> 
@@ -86,6 +87,9 @@ export default function OpenLibrarySearch() {
                 <div>
                     {error && <Button onClick={() => setPageNumber(1)}>Reset</Button>}
                 </div>
+                
+                <div className={query === '' ? '' : 'hide'}><Favorites openModal={openModal} /></div>
+
             </div>
 
             <ProjectFooter />

@@ -1,6 +1,8 @@
-/* scope [data-scope-openlib] */
 [data-scope-openlib] {
   font-family: "Roboto", sans-serif;
+}
+[data-scope-openlib] .hide {
+  display: none;
 }
 [data-scope-openlib].container {
   width: 100%;
@@ -51,6 +53,25 @@
 }
 [data-scope-openlib] .book-row .book-resultnum::before {
   content: "Result # ";
+}
+[data-scope-openlib] .favBook {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+[data-scope-openlib] .favBook .book-row {
+  text-align: center;
+  padding: 20px 40px;
+  border: none;
+}
+[data-scope-openlib] .favBook .book-row img {
+  height: 250px;
+}
+@media only screen and (max-width: 800px) {
+  [data-scope-openlib] .favBook .book-row img {
+    height: 160px;
+  }
 }
 [data-scope-openlib] .book-modalContainer {
   z-index: 99;
@@ -112,9 +133,6 @@
 }
 [data-scope-openlib] .book-modal .closeBt .closeX:hover {
   color: #000;
-}
-[data-scope-openlib] .book-modal .book-detail-wrapper {
-  max-width: 60vw;
 }
 [data-scope-openlib] .book-modal .book-cover {
   display: flex;
