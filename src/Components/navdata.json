@@ -1,0 +1,26 @@
+[
+    {
+        "name" : "Picture Puzzle",
+        "path" : "/project/image-puzzle"
+    },
+    {
+        "name" : "NASA Mars Photos",
+        "path" : "/project/nasa-rover-photos"
+    },
+    {
+        "name" : "Open Library Search",
+        "path" : "/project/open-library-search"
+    },
+    {
+        "name" : "Cure Lyrics",
+        "path" : "/project/daily-cure"
+    },
+    {
+        "name" : "Scroll Behavior",
+        "path" : "/project/p3"
+    },
+    {
+        "name" : "Family",
+        "path" : "project/family"
+    }
+] 

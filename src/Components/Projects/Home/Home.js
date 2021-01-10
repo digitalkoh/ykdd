@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Header from '../../Header/Header';
 import './home.css';
 
 const divstyle = {
@@ -15,9 +14,7 @@ const divstyle = {
 class Home extends Component {
     handleScroll() {
         const target = document.querySelectorAll(".pdiv");
-
         let i = 0, length = target.length;
-
         for (i; i < length; i++) {
             // Divide by 2 for smaller increments
             let pos = (window.pageYOffset) * target[i].dataset.rate;
@@ -35,12 +32,13 @@ class Home extends Component {
     }
 
     render() {
+        const header = this.props.header;
         return(
             <div id="home">
                 <h1 style={{color: '#fff'}}>Young Koh Design</h1>
                 <h2 style={{color: '#fff'}}>UI Designer &amp; Engineer</h2>
                 <p style={{color: '#fff'}}>React, Javascript, ES6, JSX, Node, CSS, SASS, HTML, Polymer, Angular, Typescript, XML, JSON, PHP, MYSQL, Sketch, Photoshop, Illustrator, InDesign, Figma, Jira</p>
-                <Header />
+                {header}
                 <div className='pdiv' style={{...divstyle, backgroundImage: `url( ${process.env.PUBLIC_URL}/img/intro_img2.jpg)`}} data-rate=".6"></div>
                 <div className='pdiv' style={{...divstyle, backgroundImage: `url( ${process.env.PUBLIC_URL}/img/intro_img1.png)`, opacity: '.7'}} data-rate=".8"></div>
                 
