@@ -1,4 +1,5 @@
 import React from 'react'
+import coverdata from './coverart.json'
 import { useQuery } from './ContextProvider'
 
 export default function Splash() {
@@ -8,38 +9,17 @@ export default function Splash() {
         changeQuery(val)
     }
 
+    const songInfo = coverdata.map((item, idx) => {
+        return (
+            <div key={idx} className='coverBt' onClick={() => {handleClick(item.name)}}>
+                <img alt='cover' src={`${process.env.PUBLIC_URL}/img/cure/${item.cover}.jpg`} />
+            </div>
+        )
+    })
+
     return (
         <div className='splash'>
-            <div className='coverBt' onClick={() => {handleClick('Three Imaginary Boys')}}>
-                <img alt='cover' src={`${process.env.PUBLIC_URL}/img/cure/cover_threeimaginaryboys.jpg`} />
-            </div>
-            <div className='coverBt' onClick={() => {handleClick('Kiss Me, Kiss Me, Kiss Me')}}>
-                <img alt='cover' src={`${process.env.PUBLIC_URL}/img/cure/cover_kissme.jpg`} />
-            </div>
-            <div className='coverBt' onClick={() => {handleClick('Disintegration')}}>
-                <img alt='cover' src={`${process.env.PUBLIC_URL}/img/cure/cover_disintegration.jpg`} />
-            </div>
-            <div className='coverBt' onClick={() => {handleClick('Faith')}}>
-                <img alt='cover' src={`${process.env.PUBLIC_URL}/img/cure/cover_faith.jpg`} />
-            </div>
-            <div className='coverBt' onClick={() => {handleClick('Wish')}}>
-                <img alt='cover' src={`${process.env.PUBLIC_URL}/img/cure/cover_wish.jpg`} />
-            </div>
-            <div className='coverBt' onClick={() => {handleClick('The Top')}}>
-                <img alt='cover' src={`${process.env.PUBLIC_URL}/img/cure/cover_thetop.jpg`} />
-            </div>
-            <div className='coverBt' onClick={() => {handleClick('Pornography')}}>
-                <img alt='cover' src={`${process.env.PUBLIC_URL}/img/cure/cover_pornography.jpg`} />
-            </div>
-            <div className='coverBt' onClick={() => {handleClick('Wild Mood Swings')}}>
-                <img alt='cover' src={`${process.env.PUBLIC_URL}/img/cure/cover_wildmoodswings.jpg`} />
-            </div>
-            <div className='coverBt' onClick={() => {handleClick('Standing on a Beach')}}>
-                <img alt='cover' src={`${process.env.PUBLIC_URL}/img/cure/cover_comp_standingonabeach.jpg`} />
-            </div>
-            <div className='coverBt' onClick={() => {handleClick('Join The Dots')}}>
-                <img alt='cover' src={`${process.env.PUBLIC_URL}/img/cure/cover_comp_jointhedots.jpg`} />
-            </div>
+            {songInfo}
         </div>
     )
 }

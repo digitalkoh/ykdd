@@ -32,7 +32,7 @@
 [data-scope-cure] .splash .coverBt {
   transition: 0.2s;
   margin: 1px 3px;
-  width: 160px;
+  width: 180px;
   opacity: 0.6;
 }
 [data-scope-cure] .splash .coverBt img {
@@ -46,13 +46,21 @@
   padding-bottom: 200px;
 }
 [data-scope-cure] .songs {
+  text-align: center;
   padding: calc(3px + .1vw) 20px;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), black, rgba(0, 0, 0, 0));
   margin: 2px 0;
   font-family: "Dawning of a New Day", cursive, sans-serif;
   font-size: calc(.8em + 1.8vmin);
   letter-spacing: -0.5px;
   font-weight: bold;
+  cursor: pointer;
+  transition: 0.8s;
+}
+[data-scope-cure] .songs:hover {
+  color: #972d2d;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 [data-scope-cure] .lyrics {
   font-family: "Dawning of a New Day", cursive, sans-serif;

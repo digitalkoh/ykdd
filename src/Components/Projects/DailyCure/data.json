@@ -154,7 +154,7 @@
     },
     {
         "title" : "The Big Hand (1992)",
-        "album" : "B-side to Letter to Elise",
+        "album" : "Single",
         "albumType" : "Single",
         "albumYear" : "1992",
         "songYear" : "1992",
@@ -217,7 +217,7 @@
     },
     {
         "title" : "Burn",
-        "album" : "Thr Crow OST",
+        "album" : "Soundtrack",
         "albumType" : "Soundtrack",
         "albumYear" : "1994",
         "songYear" : "1994",
@@ -316,7 +316,7 @@
     },
     {
         "title" : "Cut (Alternate Lyric)",
-        "album" : "Widh",
+        "album" : "Wish",
         "albumType" : "Studio",
         "albumYear" : "1992",
         "songYear" : "1992",
@@ -334,11 +334,11 @@
     },
     {
         "title" : "Desperate Journalist",
-        "album" : "1979 John Peel Session",
+        "album" : "Bootleg",
         "albumType" : "Bootleg",
         "albumYear" : "1979",
         "songYear" : "1979",
-        "note" : "Performed during 1979 John Peel Session. Parody Paul Morley's wriring.",
+        "note" : "Performed during 1979 John Peel Session. Parody Paul Morley's writing.",
         "lyric" : "Hey mister a review-- A word for salad-- Is written by my friend-- In penman-- -- He uses long words-- Like semiotics and semolina-- But I counted-- With-- Enigma and metropolis-- -- The lads go rampant on insignificant symbolism-- And compound this with rude soulless obliqueness-- -- Everything's coming to a grinding halt-- I use such long words-- -- It's all clever stuff-- All this charming childish fiddling about aims for the anti-image-- But it naturally creates the perfectly malleable image-- -- Tantalizing enigma-- Of the Cure-- They try to take-- Everything-- -- But the Cure really-- They're just trying to sell us something-- Their product is more artificial than most-- This is perhaps part of their-- Masterplan-- But it seems more like their naivity-- -- Everything's coming to a grinding halt-- Everything's coming to a grinding halt-- Everything's coming to a grinding halt-- -- Note how really songs what are made of (?)-- Murk and marshes-- Tawdry images-- Inane realisations-- Dull dull dull epigrams-- Sometimes they sound like an avant-garde John Otway-- Or an ugly spirit-- -- Toy drumming-- Sprightly bass-- Limited guitar riff-- -- Check the sheet out of my favorite book-- -- People don't forget the penman-- It's just that in 1979 people shouldn't be allowed to get away with things like this-- -- I say."
     },
     {
@@ -379,7 +379,7 @@
     },
     {
         "title" : "Dredd song",
-        "album" : "Judge Dredd OST",
+        "album" : "Soundtrack",
         "albumType" : "Soundtrack",
         "albumYear" : "1995",
         "songYear" : "1995",
@@ -991,7 +991,7 @@
     },
     {
         "title" : "Looking Glass Girl",
-        "album" : "The Glove",
+        "album" : "Blue Sunshine - The Glove",
         "albumType" : "Studio",
         "albumYear" : "1976",
         "songYear" : "1976",
@@ -1090,7 +1090,7 @@
     },
     {
         "title" : "Mouth to Mouth",
-        "album" : "The Glove",
+        "album" : "Blue Sunshine - The Glove",
         "albumType" : "Studio",
         "albumYear" : "1983",
         "songYear" : "1983",
@@ -1099,11 +1099,11 @@
     },
     {
         "title" : "Mr. Alphabet Says",
-        "album" : "The Glove",
+        "album" : "Blue Sunshine - The Glove",
         "albumType" : "Studio",
         "albumYear" : "1983",
         "songYear" : "1983",
-        "note" : "The Glove",
+        "note" : "Blue Sunshine - The Glove",
         "lyric" : "Here comes the book-- the book of rules-- If you play this game-- you won't stay the same-- you could win your golden teeth-- be a spinning top-- Use a riding crop-- Mr alphabet says-- Smile like a weasel-- as I cover you...-- cover you in treacle-- We all know impatience-- is a sin..so do as you're-- told to do, it's so rewarding to...-- and you could win the tin man's heart-- be a chiming clock-- lie on the chopping block-- Mr. Alphabet says-- Give me all your money-- Just to cover you-- cover you in honey-- Don't be afraid-- There's no marmalade-- Don't be afraid-- I wouldn't even dream of it!"
     },
     {
@@ -1117,8 +1117,8 @@
     },
     {
         "title" : "Never Enough",
-        "album" : "Mixed Up",
-        "albumType" : "Compilation",
+        "album" : "Single",
+        "albumType" : "Single",
         "albumYear" : "1990",
         "songYear" : "1990",
         "note" : "Single release on 'Mixed Up'",
@@ -1189,11 +1189,11 @@
     },
     {
         "title" : "Orgy",
-        "album" : "The Glove",
+        "album" : "Blue Sunshine - The Glove",
         "albumType" : "Studio",
         "albumYear" : "1983",
         "songYear" : "1983",
-        "note" : "The Glove",
+        "note" : "Blue Sunshine - The Glove",
         "lyric" : "A disease is under my fingernails-- it stains me like a tattoo-- Back on the Rack-- aching w/ time-- your face is familiar-- from another crime-- and we could swim, we could swim-- my little fishes and me-- Overgrown senses prickle + spark-- the flesh is in the palm of my hand-- Back on the Rack-- love under will-- your face is familiar-- A tongue explodes into my mouth-- a taste of coma and tears-- Back on the Rack-- my shape of rage-- your face is familiar-- from another cage-- and we could swim..."
     },
     {
@@ -1234,11 +1234,11 @@
     },
     {
         "title" : "Perfect Murder",
-        "album" : "The Glove",
+        "album" : "Blue Sunshine - The Glove",
         "albumType" : "Studio",
         "albumYear" : "1983",
         "songYear" : "1983",
-        "note" : "The Glove",
+        "note" : "Blue Sunshine - The Glove",
         "lyric" : "Move inside my daydream-- like fingers in a glove-- twisting round and round and round-- round and round and round with love!-- the meeker sleeker circle girls dressed in docile white-- spinning on a hill they follow the dracula kite-- the first idea flew thin and uninvited from the sky-- I reached out my hands and held the knife of ice-- very thin red water flowed underneath my skin-- the perfect murder-- wait until the darkest coldest summer nights-- thats when it starts-- but if you blink you'll miss the fun-- you'll lose their pretty hearts"
     },
     {
@@ -1342,11 +1342,11 @@
     },
     {
         "title" : "Punish Me With Kisses",
-        "album" : "The Glove",
+        "album" : "Blue Sunshine - The Glove",
         "albumType" : "Studio",
         "albumYear" : "1983",
         "songYear" : "1983",
-        "note" : "The Glove",
+        "note" : "Blue Sunshine - The Glove",
         "lyric" : "Your morning smile of torture holds me in it's grip-- you trace the taste of yesterday the bruise upon my Lip-- you touch my eyes and hypnotize and slip inside my heart-- I wait for this forever but we always fall apart-- you want to hold me closer-- and secretly entice-- you take the size of shadowed men-- and punish me with kisses every night-- this espionage is sweeter now-- now that we're alone but I meet your eyes and then despise-- all we call our own-- I write my name in lipstick on the mirror as I leave-- to stay would be too dangerous-- to break the make believe..."
     },
     {
@@ -1424,7 +1424,7 @@
     {
         "title" : "See The Children",
         "album" : "Bootleg",
-        "albumType" : "xxxxxx",
+        "albumType" : "Bootleg",
         "albumYear" : "1978",
         "songYear" : "1978",
         "note" : "from 'Easy Cure' days",
@@ -1441,11 +1441,11 @@
     },
     {
         "title" : "Sex Eye Make Up",
-        "album" : "The Glove",
+        "album" : "Blue Sunshine - The Glove",
         "albumType" : "Studio",
         "albumYear" : "1983",
         "songYear" : "1983",
-        "note" : "The Glove",
+        "note" : "Blue Sunshine - The Glove",
         "lyric" : "Run around the chairs in your sunday dress-- It's the best thing money can buy-- or leave me on the stairs with my feet in the air-- I think that I'm Jazzy like Christ-- one more cigarette and the car burns slow-- burning like the body Waiting at home-- throw out your teeth and call all your friends-- someone coughing took away my breath-- inches of glass all shiny and new screaming laughing--- fucks me to death one more boy full of writing white mice-- rolls over again in a london disguise-- the blood bath woman in room number one-- sex-eye-make-up tonight she just woke up today to do as she's told-- do you want to touch her?"
     },
     {
@@ -1612,11 +1612,11 @@
     },
     {
         "title" : "This Green City",
-        "album" : "The Glove",
+        "album" : "Blue Sunshine - The Glove",
         "albumType" : "Studio",
         "albumYear" : "1983",
         "songYear" : "1983",
-        "note" : "The Glove",
+        "note" : "Blue Sunshine - The Glove",
         "lyric" : "Someone's evil laugh shoots down my back-- shapeless and ageing we start to run-- through the tangle of your broken words-- this cheap impulse falls so dry-- In the maze. I burn down-- turn...you turn my skin around-- wishing my eyes could look down-- down on me...-- Stairs fall like jewels-- as we near the door-- you fold through my neck-- and arms like crystal-- so black, so black with charm and breath-- we turn to face the dying sun...-- This green city rains down on me-- this green city rains down on me"
     },
     {
@@ -1737,15 +1737,6 @@
         "lyric" : "It's a perfect day for letting go-- for setting fire to bridges-- boats-- and other dreary worlds you know-- let's get happy!-- it's a perfect day for making out-- to wake up with a smile without a doubt-- to burst grin giggle bliss skip jump and sing and shout-- let's get happy!-- but it's much to late you say-- for doing this now-- we should have done it then-- well it just goes to show-- how wrong you can be-- and how you really should know-- that it's never too late-- to get up and go-- -- it's a perfect day for kiss and swell-- for rip-zipping button-popping kiss and well...-- there's loads of other stuff can make you yell-- let's get happy!-- it's a perfect day for doing the unstuck-- for dancing like you can't hear the beat-- and you don't give a further thought-- to things like feet-- let's get happy!-- -- but it's much too late you say-- for doing this now-- we should have done it then-- well it just goes to show-- how wrong you can be-- and how you really should know-- that it's never too late-- to get up and go-- -- kick out the gloom-- kick out the blues-- tear out the pages with all the bad news-- pull down the mirrors and pull down the walls-- tear up the stairs and tear up the floors-- oh just burn down the house!-- burn down the street!-- turn everything red and the beat is complete-- with the sound of your world-- going up in fire-- it's a perfect day to throw back your head-- and kiss it all goodbye-- -- it's a perfect day for getting old-- forgetting all your worries-- life-- and everything that makes you cry-- let's get happy!-- it's a perfect day for dreams come true-- for thinking big-- and doing anything you want to do-- let's get happy!-- -- but it's much too late you say-- for doing this now-- we should have done it then-- well it just goes to show-- how wrong you can be-- and how you really should know-- that it's never too late-- to get up and go-- -- kick out the gloom-- kick out the blues-- tear out the pages with all the bad news-- pull down the mirrors and pull down the walls-- tear up the stairs and tear up the floors-- oh just burn down the house!-- burn down the street!-- turn everything red and the dream is complete-- with the sound of your world-- going up in fire-- it's a perfect day to throw back your head-- and kiss it all goodbye"
     },
     {
-        "title" : "xxxx",
-        "album" : "xxxx",
-        "albumType" : "xxxxxx",
-        "albumYear" : "0000",
-        "songYear" : "0000",
-        "note" : "",
-        "lyric" : "lyrics"
-    },
-    {
         "title" : "Untitled",
         "album" : "Disintegration",
         "albumType" : "Studio",
@@ -1846,8 +1837,8 @@
     },
     {
         "title" : "Wrong Number",
-        "album" : "Galore",
-        "albumType" : "Compilation",
+        "album" : "Single",
+        "albumType" : "Single",
         "albumYear" : "1997",
         "songYear" : "1997",
         "note" : "from Galore",

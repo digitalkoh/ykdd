@@ -11,7 +11,7 @@ export default function SongList({ data }) {
             return song.title === songTitle && setSongInfo({ ...song })
         })
     }
-    
+
     if (songInfo !== null) {
         const lyric = songInfo.lyric.split('--')
 
