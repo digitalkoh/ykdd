@@ -51,10 +51,10 @@ class Parallexer extends Component {
     render() {
         return(
             <div id="parallexer" style={{paddingTop: "80px"}}>
-                <h3 style={{color: "#6a97a3"}} data-rate="1">Digital</h3>
-                <h3 style={{color: "#6a89a3"}} data-rate="-.05">Design</h3>
-                <h3 style={{color: "#6a76a3"}} data-rate="-1">&amp; Functionality</h3>
-                <h3 style={{color: "#7e6aa3"}} data-rate="-2">Experiment</h3>
+                <h3 style={{color: "#6a97a3"}} data-rate="1">Lorem ipsum dolor sit amet</h3>
+                <h3 style={{color: "#6a89a3"}} data-rate="-.05">consectetur adipiscing elit</h3>
+                <h3 style={{color: "#6a76a3"}} data-rate="-1">Donec posuere hendrerit volutpat</h3>
+                <h3 style={{color: "#7e6aa3"}} data-rate="-2">Vivamus cursus sed lorem non varius</h3>
                 {/* <h3 style={{color: "#333"}} className="clickanywhere" data-rate="-2.2">Click anywhere to continue</h3> */}
             </div>
         )

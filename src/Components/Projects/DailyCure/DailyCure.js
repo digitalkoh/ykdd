@@ -1,26 +1,47 @@
 import React from 'react'
+import data from './data.json'
+import './style.css'
+import Header from './Header'
+import DisplayMain from './DisplayMain'
+import { QueryProvider } from './ContextProvider'
+import Splash from './Splash'
+import SongList from './SongList'
 
 export default function DailyCure() {
+
     return (
-        <div>
-            Daily Cure
+        <div data-scope-cure className='bgimg' style={{ backgroundImage: `url( ${process.env.PUBLIC_URL}/img/cure/curebgf.png )` }}>
+            <Header />
+            
+            <QueryProvider>
+                <DisplayMain>
+                    <Splash />
+                    <SongList data={data} />
+                </DisplayMain>
+            </QueryProvider>
+                
         </div>
     )
 }
 
-
-// js split to split lyrics into shorter lines
-// const navigation = navdata.map((nav, index) => {
-//     let line = nav.name.split('--')
+// const songInfo = data.map((song, idx) => {
+//     // JS Split converts sections between the char into new array
+//     let lyric = song.lyric.split('--')
 //     return (
-//         <div key={index}>
-//             {line.map((txt) => {
-//                 return (
-//                     <>
-//                         {txt}<br />
-//                     </>
-//                 )
-//             })}
+//         <div key={idx} className='songInfo' style={{padding: '20px', borderBottom: 'solid 1px #ccc'}}>
+//             <div style={{fontWeight: 'bold'}}>{song.title}</div>
+//             <div style={{fontWeight: 'bold'}}>{song.album} ({song.albumType}, {song.albumYear})</div>
+//             <div style={{fontWeight: 'bold'}}>Original year: {song.songYear}</div>
+//             <div style={{fontWeight: 'bold'}}>Note: {song.note}</div>
+//             <div>
+//                 {lyric.map((lyricline, idx) => {
+//                     return (
+//                         <div key={idx} className='lyrics'>
+//                             {lyricline}<br />
+//                         </div>
+//                     )
+//                 })}
+//             </div>
 //         </div>
 //     )
 // })

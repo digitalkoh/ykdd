@@ -1,0 +1,80 @@
+[data-scope-cure] {
+    font-family: 'Roboto', sans-serif;
+    .hide { display: none }
+    
+    width: 100%;
+    // height: 100%;
+    // min-height: 100vh;
+    background-color: #161b22;
+    color: #aaa;
+
+    &.bgimg {
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    // Header ===========================================================
+    .header {
+        text-align: center
+    }
+
+    // Display Main ===========================================================
+    .displayMain {
+        max-width: 70vw;
+        min-height: 90vh;
+        margin: 40px auto 40px auto;
+        display: flex;
+        justify-content: center;
+        align-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .splash {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-content: flex-start;
+
+        .coverBt {
+            transition: .2s;
+            margin: 1px 3px;
+            width: 160px;
+            img {width: 100%}
+            opacity: .6;
+            &:hover { opacity: 1 };
+        }
+    }
+
+    .songListContainer {
+        width: 100%;
+        padding-bottom: 200px
+    }
+
+    .songs {
+        padding: calc(3px + .1vw) 20px;
+        background-color: rgba(0, 0, 0, .4);
+        margin: 2px 0;
+        font-family: 'Dawning of a New Day', cursive, sans-serif;
+        font-size: calc(.8em + 1.8vmin);
+        letter-spacing: -.5px;
+        font-weight: bold;
+    }
+
+    .lyrics {
+        font-family: 'Dawning of a New Day', cursive, sans-serif;
+        font-size: 2.8rem;
+        letter-spacing: -.5px;
+
+        // font-family: 'Homemade Apple', cursive;
+        // font-size: 1.6rem;
+    }
+    
+    .search {
+        input {
+            color: #777;
+            background-color: rgba(255, 255, 255, .08);
+            padding: 18px
+        }
+        .clearX { color: rgba(255, 255, 255, .2)}
+    }
+}
