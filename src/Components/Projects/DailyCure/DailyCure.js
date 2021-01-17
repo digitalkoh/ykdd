@@ -4,7 +4,7 @@ import './style.css'
 import Header from './Header'
 import DisplayMain from './DisplayMain'
 import { QueryProvider } from './ContextProvider'
-import Splash from './Splash'
+import Carousel from './Carousel'
 import SongList from './SongList'
 
 export default function DailyCure() {
@@ -14,8 +14,8 @@ export default function DailyCure() {
             <Header />
             
             <QueryProvider>
+                <Carousel />
                 <DisplayMain>
-                    <Splash />
                     <SongList data={data} />
                 </DisplayMain>
             </QueryProvider>

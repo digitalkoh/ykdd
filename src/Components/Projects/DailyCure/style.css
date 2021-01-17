@@ -10,12 +10,164 @@
 [data-scope-cure].bgimg {
   background-size: contain;
   background-repeat: no-repeat;
+  background-position: top center;
 }
 [data-scope-cure] .header {
   text-align: center;
 }
+[data-scope-cure] .carousel {
+  max-width: 84vw;
+  margin: 0 auto;
+  transform: translate3d(0, 60%, 0);
+  transition: 0.8s;
+}
+[data-scope-cure] .carousel.reduced {
+  transform: translate3d(0, 6%, 0);
+}
+[data-scope-cure] .carousel .slick-track {
+  height: 400px;
+  overflow: hidden;
+}
+@media only screen and (max-width: 2200px) {
+  [data-scope-cure] .carousel .slick-track {
+    height: 340px;
+  }
+}
+@media only screen and (max-width: 1700px) {
+  [data-scope-cure] .carousel .slick-track {
+    height: 280px;
+  }
+}
+@media only screen and (max-width: 1400px) {
+  [data-scope-cure] .carousel .slick-track {
+    height: 255px;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  [data-scope-cure] .carousel .slick-track {
+    height: 220px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  [data-scope-cure] .carousel .slick-track {
+    height: 200px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  [data-scope-cure] .carousel .slick-track {
+    height: 160px;
+  }
+}
+[data-scope-cure] .carousel.reduced .slick-track {
+  height: 260px;
+}
+@media only screen and (max-width: 2000px) {
+  [data-scope-cure] .carousel.reduced .slick-track {
+    height: 240px;
+  }
+}
+@media only screen and (max-width: 1600px) {
+  [data-scope-cure] .carousel.reduced .slick-track {
+    height: 200px;
+  }
+}
+@media only screen and (max-width: 980px) {
+  [data-scope-cure] .carousel.reduced .slick-track {
+    height: 100px;
+  }
+}
+@media only screen and (max-width: 520px) {
+  [data-scope-cure] .carousel.reduced .slick-track {
+    height: 80px;
+  }
+}
+[data-scope-cure] .carousel .slick-slide {
+  transition: 1.2s;
+}
+[data-scope-cure] .carousel .coverBt {
+  text-align: center;
+  font-size: calc(8px + .74vmin);
+  transition: 0.2s;
+  margin: 1px 3px 7px 3px;
+  width: calc(80px + 10vmin);
+  opacity: 0.6;
+  padding-bottom: 10px;
+  outline: none;
+}
+[data-scope-cure] .carousel .coverBt img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+[data-scope-cure] .carousel .coverBt:hover {
+  opacity: 1;
+}
+[data-scope-cure] .carousel .coverBt.active {
+  opacity: 1;
+  background-color: #972d2d;
+  color: #efefef;
+}
+@media only screen and (max-width: 980px) {
+  [data-scope-cure] .carousel.reduced .coverBt img {
+    margin-bottom: 0;
+  }
+}
+[data-scope-cure] .carousel .slick-arrow {
+  top: 41%;
+  width: 80px;
+  height: 200px;
+}
+[data-scope-cure] .carousel .slick-arrow::before {
+  font-size: 30px;
+}
+@media only screen and (max-width: 1400px) {
+  [data-scope-cure] .carousel .slick-arrow {
+    top: 28%;
+  }
+}
+@media only screen and (max-width: 820px) {
+  [data-scope-cure] .carousel .slick-arrow {
+    top: 35%;
+  }
+  [data-scope-cure] .carousel .slick-arrow::before {
+    font-size: 24px;
+  }
+}
+[data-scope-cure] .carousel .slick-prev {
+  left: -60px;
+}
+[data-scope-cure] .carousel .slick-next {
+  right: -60px;
+}
+[data-scope-cure] .carousel.reduced .coverBt {
+  font-size: calc(6px + .64vmin);
+}
+@media only screen and (max-width: 980px) {
+  [data-scope-cure] .carousel.reduced .coverBt {
+    font-size: 0;
+  }
+}
+[data-scope-cure] .carousel.reduced .slick-arrow {
+  top: 40%;
+  height: 150px;
+}
+[data-scope-cure] .carousel.reduced .slick-arrow::before {
+  font-size: 26px;
+}
+@media only screen and (max-width: 1400px) {
+  [data-scope-cure] .carousel.reduced .slick-arrow {
+    top: 28%;
+  }
+}
+@media only screen and (max-width: 820px) {
+  [data-scope-cure] .carousel.reduced .slick-arrow {
+    top: 35%;
+  }
+  [data-scope-cure] .carousel.reduced .slick-arrow::before {
+    font-size: 18px;
+  }
+}
 [data-scope-cure] .displayMain {
-  max-width: 70vw;
+  max-width: 90vw;
   min-height: 90vh;
   margin: 40px auto 40px auto;
   display: flex;
@@ -28,18 +180,6 @@
   justify-content: center;
   flex-wrap: wrap;
   align-content: flex-start;
-}
-[data-scope-cure] .splash .coverBt {
-  transition: 0.2s;
-  margin: 1px 3px;
-  width: 180px;
-  opacity: 0.6;
-}
-[data-scope-cure] .splash .coverBt img {
-  width: 100%;
-}
-[data-scope-cure] .splash .coverBt:hover {
-  opacity: 1;
 }
 [data-scope-cure] .songListContainer {
   width: 100%;

@@ -11,6 +11,8 @@
     { "year" : "1996", "type" : "Studio", "name" : "Wild Mood Swings", "cover" : "cover_wildmoodswings" },
     { "year" : "2000", "type" : "Studio", "name" : "Bloodflowers", "cover" : "cover_bloodflowers" },
     { "year" : "2004", "type" : "Compilation", "name" : "Join The Dots", "cover" : "cover_comp_jointhedots" },
+    { "year" : "2004", "type" : "Studio", "name" : "The Cure", "cover" : "cover_cure" },
+    { "year" : "2008", "type" : "Studio", "name" : "4:13 Dream", "cover" : "cover_413dream" },
     { "year" : "1983", "type" : "Studio", "name" : "Blue Sunshine - The Glove", "cover" : "cover_bluesunshine" },
     { "year" : "", "type" : "Bootleg", "name" : "Bootleg", "cover" : "cover_bootleg" },
     { "year" : "", "type" : "Single", "name" : "Single", "cover" : "cover_singles" }

@@ -1,12 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import FadeIn from 'react-fade-in';
 import { useQuery } from './ContextProvider'
 
 export default function SongList({ data }) {
     const [songInfo, setSongInfo] = useState(null)
-    const { query } = useQuery()
+    const { query, changeQuery } = useQuery()
 
-    function getLyric(songTitle) {
+    function clearQuery() {
+        changeQuery('')
+    }
+
+    useEffect(() => {
+        setSongInfo(null)
+    }, [query])
+
+    
+    const getLyric = (songTitle) => {
         data.map(song => {
             return song.title === songTitle && setSongInfo({ ...song })
         })
@@ -37,7 +46,9 @@ export default function SongList({ data }) {
     } else {
         return (
             <div className='songListContainer'>
-                {query !== '' && 
+                <button onClick={clearQuery}>X</button>
+ 
+                {
                     data.map((song, idx) => {
                         return song.album === query && <FadeIn transitionDuration={300} key={idx}><div className='songs' onClick={() => {getLyric(song.title)}}>{song.title}</div></FadeIn>
                     })

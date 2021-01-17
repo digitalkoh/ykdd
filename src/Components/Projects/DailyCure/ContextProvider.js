@@ -12,7 +12,6 @@ export function QueryProvider({ children }) {
     function changeQuery(val) {
         setQuery(val)
     }
-
     return (
         <QueryContext.Provider value={{ query, changeQuery }}>
             {children}
