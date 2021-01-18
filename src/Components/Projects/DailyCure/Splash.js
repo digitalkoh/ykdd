@@ -5,6 +5,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+
+// NOT USED ------------------------------------------------------------------------
 export default function Splash() {
     const { query, changeQuery } = useQuery()
 

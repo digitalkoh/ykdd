@@ -15,6 +15,14 @@
 [data-scope-cure] .header {
   text-align: center;
 }
+[data-scope-cure] .search input {
+  color: #777;
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 18px;
+}
+[data-scope-cure] .search .clearX {
+  color: rgba(255, 255, 255, 0.2);
+}
 [data-scope-cure] .carousel {
   max-width: 84vw;
   margin: 0 auto;
@@ -85,6 +93,7 @@
   transition: 1.2s;
 }
 [data-scope-cure] .carousel .coverBt {
+  cursor: pointer;
   text-align: center;
   font-size: calc(8px + .74vmin);
   transition: 0.2s;
@@ -175,20 +184,57 @@
   align-content: flex-start;
   flex-wrap: wrap;
 }
-[data-scope-cure] .splash {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-content: flex-start;
-}
 [data-scope-cure] .songListContainer {
-  width: 100%;
+  width: 88%;
   padding-bottom: 200px;
+}
+@media only screen and (max-width: 600px) {
+  [data-scope-cure] .songListContainer {
+    width: 100%;
+  }
+}
+[data-scope-cure] .songListContainer .summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: rgba(134, 128, 128, 0.4) 1px solid;
+  padding: 12px;
+  margin-bottom: 2px;
+  flex-wrap: wrap;
+}
+[data-scope-cure] .songListContainer .summary .summary-txtLarge {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+[data-scope-cure] .songListContainer .summary .summary-txtSmall {
+  font-size: 0.9em;
+}
+[data-scope-cure] .songListContainer .summary .button-ico, [data-scope-cure] .songListContainer .summary .button {
+  font-size: 0.9em;
+  transition: 0.3s;
+  cursor: pointer;
+  border: rgba(134, 128, 128, 0.4) 1px solid;
+  border-radius: 100px;
+  padding: 4px 1.5em;
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+}
+[data-scope-cure] .songListContainer .summary .button-ico:hover, [data-scope-cure] .songListContainer .summary .button:hover {
+  background-color: rgba(4, 3, 3, 0.4);
+}
+[data-scope-cure] .songListContainer .summary .button-ico svg, [data-scope-cure] .songListContainer .summary .button svg {
+  margin-right: 8px;
+}
+@media only screen and (max-width: 800px) {
+  [data-scope-cure] .songListContainer .summary .button-ico, [data-scope-cure] .songListContainer .summary .button {
+    margin: 8px 0;
+  }
 }
 [data-scope-cure] .songs {
   text-align: center;
   padding: calc(3px + .1vw) 20px;
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), black, rgba(0, 0, 0, 0));
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
   margin: 2px 0;
   font-family: "Dawning of a New Day", cursive, sans-serif;
   font-size: calc(.8em + 1.8vmin);
@@ -202,18 +248,48 @@
   padding-top: 30px;
   padding-bottom: 30px;
 }
+[data-scope-cure] .lyricContainer {
+  border-top: rgba(134, 128, 128, 0.4) 1px solid;
+  padding: 12px;
+  height: 70vh;
+  overflow-y: scroll;
+  /* Track */
+  /* Handle */
+  /* Handle on hover */
+}
+[data-scope-cure] .lyricContainer::-webkit-scrollbar {
+  width: 14px;
+}
+[data-scope-cure] .lyricContainer::-webkit-scrollbar-track {
+  background: transparent;
+}
+[data-scope-cure] .lyricContainer::-webkit-scrollbar-thumb {
+  background: rgba(134, 128, 128, 0.4);
+}
+[data-scope-cure] .lyricContainer::-webkit-scrollbar-thumb:hover {
+  background: rgba(134, 128, 128, 0.4);
+}
 [data-scope-cure] .lyrics {
   font-family: "Dawning of a New Day", cursive, sans-serif;
   font-size: 2.8rem;
   letter-spacing: -0.5px;
+  transition: 0.4s;
+  line-height: 1.8em;
 }
-[data-scope-cure] .search input {
-  color: #777;
-  background-color: rgba(255, 255, 255, 0.08);
-  padding: 18px;
+[data-scope-cure] .lyrics.txt-normal {
+  font-family: times, sans-serif;
+  font-size: 2rem;
+  letter-spacing: 0;
 }
-[data-scope-cure] .search .clearX {
-  color: rgba(255, 255, 255, 0.2);
+[data-scope-cure] .lyrics.txt-center {
+  text-align: center;
+}
+[data-scope-cure] .summary.songFooter .footerButtonGroup {
+  display: flex;
+  flex-wrap: wrap;
+}
+[data-scope-cure] .summary.songFooter .summary-txtSmall {
+  padding: 2px 0;
 }
 
 /*# sourceMappingURL=style.css.map */
