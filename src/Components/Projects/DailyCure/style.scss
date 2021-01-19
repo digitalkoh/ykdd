@@ -13,18 +13,69 @@ $borderColor: rgba(134, 128, 128, 0.4);
         background-position: top center;
     }
 
+    .button-ico, .button {
+        font-size: .9em;
+        transition: .3s;
+        cursor: pointer;
+        border: $borderColor 1px solid;
+        border-radius: 100px;
+        padding: 4px 1.5em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 40px;
+        &:hover {
+            background-color: darken($borderColor, 50%)
+        }
+        svg {margin-right: 8px}
+        @media only screen and (max-width: 800px) { margin: 8px 0 }
+    }
+
     // Header ===========================================================
     .header {
-        text-align: center
+        text-align: center;
+        .search input {
+            color: #efefef;
+            font-size: 1.4em;
+            padding: 8px;
+        }
+        .searchHelper {
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            padding: 8px;
+            .button { margin: 0 8px; min-width: 160px;}
+        }
     }
 
     .search {
+        .MuiFormControl-root{ width: 100% }
+        position: relative;
+        width: 50%;
+        @media only screen and (max-width: 800px) { width: 80% }
+        margin: auto;
         input {
             color: #777;
             background-color: rgba(255, 255, 255, .08);
             padding: 18px
         }
-        .clearX { color: rgba(255, 255, 255, .2)}
+        .clearX {
+            color: rgba(255, 255, 255, .3);
+            position: absolute;
+            top: 15px;
+            right: 0;
+            cursor: pointer;
+            &:hover {
+                color: rgba(255, 255, 255, .6);
+            }
+        }
+        .alert {
+            transition: .4s;
+            background-color: rgb(151, 45, 45);
+            padding: 8px;
+            border-radius: 22px;
+            color: #eee;
+        }
     }
 
     // Carousel ===========================================================
@@ -134,22 +185,6 @@ $borderColor: rgba(134, 128, 128, 0.4);
             }
             .summary-txtSmall {
                 font-size: .9em
-            }
-            .button-ico, .button {
-                font-size: .9em;
-                transition: .3s;
-                cursor: pointer;
-                border: $borderColor 1px solid;
-                border-radius: 100px;
-                padding: 4px 1.5em;
-                display: flex;
-                align-items: center;
-                min-height: 40px;
-                &:hover {
-                    background-color: darken($borderColor, 50%)
-                }
-                svg {margin-right: 8px}
-                @media only screen and (max-width: 800px) { margin: 8px 0 }
             }
         }
     }

@@ -15,10 +15,12 @@ export default function SongList({ data, albumdata }) {
     const [songInfo, setSongInfo] = useState(null)
 
     // From context provider
-    const { query, queryInTitle, queryInLyric, changeQuery } = useQuery()
+    const { query, queryInTitle, queryInLyric, changeQuery, forQueryInTitle, forQueryInLyric } = useQuery()
 
     function clearQuery() {
         changeQuery('')
+        forQueryInTitle(false)
+        forQueryInLyric(false)
     }
 
     const summaryText = () => {
