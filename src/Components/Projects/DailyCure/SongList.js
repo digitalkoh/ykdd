@@ -10,23 +10,69 @@ import SummaryFooter from './SummaryFooter'
 export default function SongList({ data, albumdata }) {
     const [cureTxtStyle, setCureTxtStyle] = useLocalStorage('cureTxtStyle', '');
     const [cureTxtAlign, setCureTxtAlign] = useLocalStorage('cureTxtAlign', '');
+
+    // Used when lyric is displayed
     const [songInfo, setSongInfo] = useState(null)
-    const { query, changeQuery } = useQuery()
+
+    // From context provider
+    const { query, queryInTitle, queryInLyric, changeQuery } = useQuery()
 
     function clearQuery() {
         changeQuery('')
+    }
+
+    const summaryText = () => {
+        if (queryInTitle) {
+            return 'Song titles containg'
+        } else if (queryInLyric) {
+            return 'Songs with lyrics containing'
+        } else {
+            return 'Songs from'
+        }
     }
 
     useEffect(() => {
         setSongInfo(null)
     }, [query])
 
-    
     const getLyric = (songTitle) => {
         data.map(song => {
             return song.title === songTitle && setSongInfo({ ...song })
         })
     }
+
+    // const songDisplay = () => {
+    //     if (queryInTitle) { // For title search
+    //         data.map((track, idx) => {
+    //             return (
+    //                 track.title.toUpperCase().includes(query.toUpperCase()) && 
+    //                 <FadeIn transitionDuration={300} key={idx}>
+    //                     <div className='songs' onClick={() => {getLyric(track.title); scrollTo(0)}}>{track.title}</div>
+    //                 </FadeIn>
+    //             )
+    //         })
+    //     } else if (queryInLyric) { //For lyric search
+    //         return (
+    //             track.lyric.toUpperCase().includes(query.toUpperCase()) && 
+    //             <FadeIn transitionDuration={300} key={idx}>
+    //                 <div className='songs' onClick={() => {getLyric(track.title); scrollTo(0)}}>{track.title}</div>
+    //             </FadeIn>
+    //         )
+    //     } else { // For album search
+    //         albumdata.map((item) => {
+    //             return (
+    //                 item.name === query && 
+    //                 item.tracks.map((track, idx) => {
+    //                     return (
+    //                         <FadeIn transitionDuration={300} key={idx}>
+    //                             <div className='songs' onClick={() => {getLyric(track); scrollTo(0)}}>{track}</div>
+    //                         </FadeIn>
+    //                     )
+    //                 })
+    //             )
+    //         })
+    //     }
+    // }
 
     if (songInfo !== null) {
         const lyric = songInfo.lyric.split('--')
@@ -66,12 +112,35 @@ export default function SongList({ data, albumdata }) {
             <div className='songListContainer'>
                 <div className='summary'>
                     <div>
-                        <div className='summary-txtSmall'>Songs from</div>
+                        <div className='summary-txtSmall'>{summaryText()}</div>
                         <div className='summary-txtLarge'>{query}</div>
                     </div>
                     <div className='button-ico button' onClick={clearQuery}><EjectIcon className='ico-eject' style={{ fontSize: 30 }} />Clear</div>
                 </div>
-                {
+
+                {queryInTitle || queryInLyric ? 
+                    // For lyric or title search
+                    data.map((track, idx) => {
+                        if (queryInTitle) {
+                            return (
+                                track.title.toUpperCase().includes(query.toUpperCase()) && 
+                                <FadeIn transitionDuration={300} key={idx}>
+                                    <div className='songs' onClick={() => {getLyric(track.title); scrollTo(0)}}>{track.title}</div>
+                                </FadeIn>
+                            )
+                        } else if (queryInLyric) {
+                            return (
+                                track.lyric.toUpperCase().includes(query.toUpperCase()) && 
+                                <FadeIn transitionDuration={300} key={idx}>
+                                    <div className='songs' onClick={() => {getLyric(track.title); scrollTo(0)}}>{track.title}</div>
+                                </FadeIn>
+                            )
+                        } else {
+                            return null
+                        }
+                    })
+                    :
+                    // For album search
                     albumdata.map((item) => {
                         return (
                             item.name === query && 

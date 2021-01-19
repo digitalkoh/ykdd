@@ -6,10 +6,12 @@ import "slick-carousel/slick/slick-theme.css";
 import { useQuery } from './ContextProvider'
 
 export default function Carousel() {
-    const { query, changeQuery } = useQuery()
+    const { query, changeQuery, forQueryInTitle, forQueryInLyric } = useQuery()
 
     function handleClick(val) {
         changeQuery(val)
+        forQueryInTitle(false)
+        forQueryInLyric(false)
     }
 
     const songInfo = coverdata.map((item, idx) => {
