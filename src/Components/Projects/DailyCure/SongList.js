@@ -7,7 +7,7 @@ import EjectIcon from '@material-ui/icons/Eject';
 import QueueMusicIcon from '@material-ui/icons/QueueMusic';
 import SummaryFooter from './SummaryFooter'
 
-export default function SongList({ data }) {
+export default function SongList({ data, albumdata }) {
     const [cureTxtStyle, setCureTxtStyle] = useLocalStorage('cureTxtStyle', '');
     const [cureTxtAlign, setCureTxtAlign] = useLocalStorage('cureTxtAlign', '');
     const [songInfo, setSongInfo] = useState(null)
@@ -55,6 +55,7 @@ export default function SongList({ data }) {
                     songInfo={songInfo} 
                     cureTxtStyle={cureTxtStyle} 
                     setCureTxtStyle={setCureTxtStyle} 
+                    cureTxtAlign={cureTxtAlign}
                     setCureTxtAlign={setCureTxtAlign} 
                 />
             </FadeIn>
@@ -71,8 +72,17 @@ export default function SongList({ data }) {
                     <div className='button-ico button' onClick={clearQuery}><EjectIcon className='ico-eject' style={{ fontSize: 30 }} />Clear</div>
                 </div>
                 {
-                    data.map((song, idx) => {
-                        return song.album === query && <FadeIn transitionDuration={300} key={idx}><div className='songs' onClick={() => {getLyric(song.title); scrollTo(0)}}>{song.title}</div></FadeIn>
+                    albumdata.map((item) => {
+                        return (
+                            item.name === query && 
+                            item.tracks.map((track, idx) => {
+                                return (
+                                    <FadeIn transitionDuration={300} key={idx}>
+                                        <div className='songs' onClick={() => {getLyric(track); scrollTo(0)}}>{track}</div>
+                                    </FadeIn>
+                                )
+                            })
+                        )
                     })
                 }
             </div>

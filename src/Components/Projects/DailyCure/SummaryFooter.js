@@ -1,9 +1,10 @@
 import React from 'react'
 import CheckIcon from '@material-ui/icons/Check';
+import IconButton from './IconButton'
 import FormatAlignCenterIcon from '@material-ui/icons/FormatAlignCenter';
 import FormatAlignLeftIcon from '@material-ui/icons/FormatAlignLeft';
 
-export default function SummaryFooter({ songInfo, cureTxtStyle, setCureTxtStyle, setCureTxtAlign }) {
+export default function SummaryFooter({ songInfo, cureTxtStyle, setCureTxtStyle, cureTxtAlign, setCureTxtAlign }) {
     const handleClickStyle = (val) => {
         setCureTxtStyle(val)
     }
@@ -21,23 +22,34 @@ export default function SummaryFooter({ songInfo, cureTxtStyle, setCureTxtStyle,
 
             <div className='footerButtonGroup'>
                 <div style={{ display: 'flex', alignItems: 'center'}}>
-                    <div className='button' style={{ marginRight: '12px'}} onClick={() => {handleClickAlign('')}}>
-                        <FormatAlignLeftIcon style={{ fontSize: 24}} /> Left
-                    </div>
+                    <IconButton 
+                        onClick={() => {handleClickAlign('')}}
+                        icon={<FormatAlignLeftIcon style={{ fontSize: 24, opacity: cureTxtAlign === '' ? '1' : '.1'}} />}
+                        style={{ marginRight: '12px'}}
+                        label={'Left'}
+                    />
 
-                    <div className='button' style={{ marginRight: '12px'}} onClick={() => {handleClickAlign('txt-center')}}>
-                        <FormatAlignCenterIcon style={{ fontSize: 24 }} /> Center
-                    </div>
+                    <IconButton 
+                        onClick={() => {handleClickAlign('txt-center')}}
+                        icon={<FormatAlignCenterIcon style={{ fontSize: 24, opacity: cureTxtAlign === 'txt-center' ? '1' : '.1' }} />}
+                        style={{ marginRight: '12px'}}
+                        label={'Center'}
+                    />
                 </div>
                 
                 <div style={{ display: 'flex', alignItems: 'center'}}>
-                    <div className='button' style={{ marginRight: '12px'}} onClick={() => {handleClickStyle('')}}>
-                        <CheckIcon className='ico-check' style={{ fontSize: 30, opacity: cureTxtStyle === '' ? '1' : '.1'}} /> Handwriting
-                    </div>
+                    <IconButton 
+                        onClick={() => {handleClickStyle('')}}
+                        icon={<CheckIcon className='ico-check' style={{ fontSize: 30, opacity: cureTxtStyle === '' ? '1' : '.1'}} />}
+                        style={{ marginRight: '12px'}}
+                        label={'Handwriting'}
+                    />
 
-                    <div className='button' onClick={() => {handleClickStyle('txt-normal')}}>
-                        <CheckIcon className='ico-check' style={{ fontSize: 30, opacity: cureTxtStyle === 'txt-normal' ? '1' : '.1' }} /> Normal
-                    </div>
+                    <IconButton 
+                        onClick={() => {handleClickStyle('txt-normal')}}
+                        icon={<CheckIcon className='ico-check' style={{ fontSize: 30, opacity: cureTxtStyle === 'txt-normal' ? '1' : '.1' }} />}
+                        label={'Normal'}
+                    />
                 </div>
             </div>
         </div>

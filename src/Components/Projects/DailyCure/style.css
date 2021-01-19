@@ -95,7 +95,7 @@
 [data-scope-cure] .carousel .coverBt {
   cursor: pointer;
   text-align: center;
-  font-size: calc(8px + .74vmin);
+  font-size: calc(8px + .6vmin);
   transition: 0.2s;
   margin: 1px 3px 7px 3px;
   width: calc(80px + 10vmin);
@@ -276,10 +276,34 @@
   transition: 0.4s;
   line-height: 1.8em;
 }
+@media only screen and (max-width: 800px) {
+  [data-scope-cure] .lyrics {
+    font-size: 2.4rem;
+    line-height: 1.4em;
+  }
+}
+@media only screen and (max-width: 520px) {
+  [data-scope-cure] .lyrics {
+    font-size: 2rem;
+    line-height: 1.4em;
+  }
+}
 [data-scope-cure] .lyrics.txt-normal {
   font-family: times, sans-serif;
   font-size: 2rem;
   letter-spacing: 0;
+}
+@media only screen and (max-width: 800px) {
+  [data-scope-cure] .lyrics.txt-normal {
+    font-size: 1.6rem;
+    line-height: 1.8em;
+  }
+}
+@media only screen and (max-width: 520px) {
+  [data-scope-cure] .lyrics.txt-normal {
+    font-size: 1.4rem;
+    line-height: 1.6em;
+  }
 }
 [data-scope-cure] .lyrics.txt-center {
   text-align: center;

@@ -1,7 +1,8 @@
 import React from 'react'
 import data from './data.json'
+import albumdata from './coverart.json'
 import './style.css'
-import Header from './Header'
+// import Header from './Header'
 import DisplayMain from './DisplayMain'
 import { QueryProvider } from './ContextProvider'
 import Carousel from './Carousel'
@@ -11,12 +12,12 @@ export default function DailyCure() {
 
     return (
         <div data-scope-cure className='bgimg' style={{ backgroundImage: `url( ${process.env.PUBLIC_URL}/img/cure/curebgf.png )` }}>
-            <Header />
+            {/* <Header /> */}
             
             <QueryProvider>
                 <Carousel />
                 <DisplayMain>
-                    <SongList data={data} />
+                    <SongList data={data} albumdata={albumdata} />
                 </DisplayMain>
             </QueryProvider>
                 
