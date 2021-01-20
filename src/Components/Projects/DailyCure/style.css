@@ -61,6 +61,19 @@
 [data-scope-cure] .search .MuiFormControl-root {
   width: 100%;
 }
+[data-scope-cure] .search .MuiInputLabel-formControl {
+  left: 8px;
+  top: 4px;
+}
+[data-scope-cure] .search .MuiInput-root.MuiInput-underline:after {
+  border-color: #972d2d;
+}
+[data-scope-cure] .search .MuiFormLabel-root.MuiInputLabel-root {
+  color: #999;
+}
+[data-scope-cure] .search .MuiInputBase-input.MuiInput-input {
+  border-radius: 4px;
+}
 @media only screen and (max-width: 800px) {
   [data-scope-cure] .search {
     width: 80%;
@@ -72,6 +85,7 @@
   padding: 18px;
 }
 [data-scope-cure] .search .clearX {
+  transition: 0.4s;
   color: rgba(255, 255, 255, 0.3);
   position: absolute;
   top: 15px;
@@ -82,11 +96,26 @@
   color: rgba(255, 255, 255, 0.6);
 }
 [data-scope-cure] .search .alert {
-  transition: 0.4s;
-  background-color: #972d2d;
   padding: 8px;
   border-radius: 22px;
-  color: #eee;
+  color: #bbb;
+  margin: 4px auto;
+  background-color: rgba(151, 45, 45, 0.5);
+  animation-name: alertbox;
+  animation-duration: 0.4s;
+}
+@keyframes alertbox {
+  0% {
+    background-color: rgba(151, 45, 45, 0);
+    width: 40%;
+  }
+  50% {
+    background-color: rgba(151, 45, 45, 0.3);
+    width: 100%;
+  }
+  100% {
+    background-color: rgba(151, 45, 45, 0.5);
+  }
 }
 [data-scope-cure] .carousel {
   max-width: 84vw;
@@ -212,6 +241,9 @@
 [data-scope-cure] .carousel .slick-next {
   right: -60px;
 }
+[data-scope-cure] .carousel .slick-prev::before, [data-scope-cure] .carousel .slick-next::before {
+  opacity: 0.3;
+}
 [data-scope-cure] .carousel.reduced .coverBt {
   font-size: calc(6px + .64vmin);
 }
@@ -333,18 +365,18 @@
 }
 [data-scope-cure] .lyrics.txt-normal {
   font-family: times, sans-serif;
-  font-size: 2rem;
+  font-size: 1.8rem;
   letter-spacing: 0;
 }
 @media only screen and (max-width: 800px) {
   [data-scope-cure] .lyrics.txt-normal {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     line-height: 1.8em;
   }
 }
 @media only screen and (max-width: 520px) {
   [data-scope-cure] .lyrics.txt-normal {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     line-height: 1.6em;
   }
 }

@@ -6,6 +6,7 @@ import { useQuery } from './ContextProvider'
 import EjectIcon from '@material-ui/icons/Eject';
 import QueueMusicIcon from '@material-ui/icons/QueueMusic';
 import SummaryFooter from './SummaryFooter'
+import { v4 as uuidV4 } from 'uuid'
 
 export default function SongList({ data, albumdata }) {
     const [cureTxtStyle, setCureTxtStyle] = useLocalStorage('cureTxtStyle', '');
@@ -13,6 +14,9 @@ export default function SongList({ data, albumdata }) {
 
     // Used when lyric is displayed
     const [songInfo, setSongInfo] = useState(null)
+
+    // Used for summary info
+    const [albumInfo, setAlbumInfo] = useState({})
 
     // From context provider
     const { query, queryInTitle, queryInLyric, changeQuery, forQueryInTitle, forQueryInLyric } = useQuery()
@@ -25,7 +29,7 @@ export default function SongList({ data, albumdata }) {
 
     const summaryText = () => {
         if (queryInTitle) {
-            return 'Song titles containg'
+            return 'Song titles containing'
         } else if (queryInLyric) {
             return 'Songs with lyrics containing'
         } else {
@@ -43,38 +47,11 @@ export default function SongList({ data, albumdata }) {
         })
     }
 
-    // const songDisplay = () => {
-    //     if (queryInTitle) { // For title search
-    //         data.map((track, idx) => {
-    //             return (
-    //                 track.title.toUpperCase().includes(query.toUpperCase()) && 
-    //                 <FadeIn transitionDuration={300} key={idx}>
-    //                     <div className='songs' onClick={() => {getLyric(track.title); scrollTo(0)}}>{track.title}</div>
-    //                 </FadeIn>
-    //             )
-    //         })
-    //     } else if (queryInLyric) { //For lyric search
-    //         return (
-    //             track.lyric.toUpperCase().includes(query.toUpperCase()) && 
-    //             <FadeIn transitionDuration={300} key={idx}>
-    //                 <div className='songs' onClick={() => {getLyric(track.title); scrollTo(0)}}>{track.title}</div>
-    //             </FadeIn>
-    //         )
-    //     } else { // For album search
-    //         albumdata.map((item) => {
-    //             return (
-    //                 item.name === query && 
-    //                 item.tracks.map((track, idx) => {
-    //                     return (
-    //                         <FadeIn transitionDuration={300} key={idx}>
-    //                             <div className='songs' onClick={() => {getLyric(track); scrollTo(0)}}>{track}</div>
-    //                         </FadeIn>
-    //                     )
-    //                 })
-    //             )
-    //         })
-    //     }
-    // }
+    useEffect(() => {
+        albumdata.map(item => {
+            return item.name === query && setAlbumInfo({ ...item })
+        })
+    }, [albumdata, query])
 
     if (songInfo !== null) {
         const lyric = songInfo.lyric.split('--')
@@ -83,16 +60,16 @@ export default function SongList({ data, albumdata }) {
             <FadeIn className={'songListContainer'} transitionDuration={800}>
                 <div className='summary'>
                     <div>
-                        <div className='summary-txtLarge'>{songInfo.title}</div> 
+                        <div className='summary-txtLarge'>{songInfo.title}</div>
                         <div className='summary-txtSmall'>{songInfo.album} ({songInfo.albumYear})</div>
                     </div>
                     <div className='button-ico button' onClick={() => {setSongInfo(null)}}><QueueMusicIcon className='ico-list' style={{ fontSize: 30 }} />Song List</div>
                 </div>
 
                 <div className='lyricContainer'>
-                    {lyric.map((lyricline, idx) => {
+                    {lyric.map(lyricline => {
                         return (
-                            <div key={idx} className={`lyrics ${cureTxtStyle} ${cureTxtAlign}`}>
+                            <div key={uuidV4()} className={`lyrics ${cureTxtStyle} ${cureTxtAlign}`}>
                                 {lyricline}<br />
                             </div>
                         )
@@ -115,25 +92,32 @@ export default function SongList({ data, albumdata }) {
                 <div className='summary'>
                     <div>
                         <div className='summary-txtSmall'>{summaryText()}</div>
-                        <div className='summary-txtLarge'>{query}</div>
+                        <div className='summary-txtLarge'>
+                            {queryInTitle || queryInLyric ? query : albumInfo.name} 
+                            {
+                                queryInTitle || queryInLyric ? null 
+                                :
+                                <span style={{ fontWeight: 'normal'}}> ( {albumInfo.year && `${albumInfo.year}, `} {albumInfo.type} )</span>
+                            }
+                        </div>
                     </div>
                     <div className='button-ico button' onClick={clearQuery}><EjectIcon className='ico-eject' style={{ fontSize: 30 }} />Clear</div>
                 </div>
 
                 {queryInTitle || queryInLyric ? 
                     // For lyric or title search
-                    data.map((track, idx) => {
+                    data.map(track => {
                         if (queryInTitle) {
                             return (
                                 track.title.toUpperCase().includes(query.toUpperCase()) && 
-                                <FadeIn transitionDuration={300} key={idx}>
+                                <FadeIn transitionDuration={300} key={uuidV4()}>
                                     <div className='songs' onClick={() => {getLyric(track.title); scrollTo(0)}}>{track.title}</div>
                                 </FadeIn>
                             )
                         } else if (queryInLyric) {
                             return (
                                 track.lyric.toUpperCase().includes(query.toUpperCase()) && 
-                                <FadeIn transitionDuration={300} key={idx}>
+                                <FadeIn transitionDuration={300} key={uuidV4()}>
                                     <div className='songs' onClick={() => {getLyric(track.title); scrollTo(0)}}>{track.title}</div>
                                 </FadeIn>
                             )
@@ -146,9 +130,9 @@ export default function SongList({ data, albumdata }) {
                     albumdata.map((item) => {
                         return (
                             item.name === query && 
-                            item.tracks.map((track, idx) => {
+                            item.tracks.map(track => {
                                 return (
-                                    <FadeIn transitionDuration={300} key={idx}>
+                                    <FadeIn transitionDuration={300} key={uuidV4()}>
                                         <div className='songs' onClick={() => {getLyric(track); scrollTo(0)}}>{track}</div>
                                     </FadeIn>
                                 )

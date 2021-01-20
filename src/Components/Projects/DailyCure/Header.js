@@ -41,7 +41,7 @@ export default function Header() {
     return (
         <div className='header'>
             <div className='search'>
-                    <TextField className='searchInput' value={term} onChange={e => {setTerm(e.target.value)}} label="Search..." />
+                    <TextField className='searchInput' value={term} onChange={e => {setTerm(e.target.value)}} label="Search title or lyric..." />
                     <div className='alert' style={warning}>Please type more than two letters.</div>
                     <div className='searchHelper'>
                         <div className='button' onClick={handleSearchTtile}>In Song Title</div>

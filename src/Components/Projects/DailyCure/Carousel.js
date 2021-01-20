@@ -32,12 +32,12 @@ export default function Carousel() {
         infinite: true,
         speed: 500,
         slidesToShow: toShowBase,
-        slidesToScroll: toShowBase - 1,
+        slidesToScroll: toShowBase - 4,
             responsive: [
             {breakpoint: 780,
                 settings: {
-                    slidesToShow: toShowBase - 2,
-                    slidesToScroll: toShowBase - 2
+                    slidesToShow: toShowBase - 3,
+                    slidesToScroll: toShowBase - 4
                 }
             },
             {breakpoint: 320,

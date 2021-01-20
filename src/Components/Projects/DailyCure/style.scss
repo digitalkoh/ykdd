@@ -50,6 +50,11 @@ $borderColor: rgba(134, 128, 128, 0.4);
 
     .search {
         .MuiFormControl-root{ width: 100% }
+        .MuiInputLabel-formControl { left: 8px; top: 4px }
+        .MuiInput-root.MuiInput-underline:after { border-color: rgb(151, 45, 45) }
+        .MuiFormLabel-root.MuiInputLabel-root{ color: #999 }
+        .MuiInputBase-input.MuiInput-input { border-radius: 4px }
+
         position: relative;
         width: 50%;
         @media only screen and (max-width: 800px) { width: 80% }
@@ -60,6 +65,7 @@ $borderColor: rgba(134, 128, 128, 0.4);
             padding: 18px
         }
         .clearX {
+            transition: .4s;
             color: rgba(255, 255, 255, .3);
             position: absolute;
             top: 15px;
@@ -70,12 +76,20 @@ $borderColor: rgba(134, 128, 128, 0.4);
             }
         }
         .alert {
-            transition: .4s;
-            background-color: rgb(151, 45, 45);
             padding: 8px;
             border-radius: 22px;
-            color: #eee;
+            color: #bbb;
+            margin: 4px auto;
+
+            background-color: rgba(151, 45, 45, .5);
+            animation-name: alertbox;
+            animation-duration: .4s;
         }
+         @keyframes alertbox {
+            0%   {background-color: rgba(151, 45, 45, 0); width: 40%}
+            50%  {background-color: rgba(151, 45, 45, .3); width: 100%}
+            100% {background-color: rgba(151, 45, 45, .5) }
+         }
     }
 
     // Carousel ===========================================================
@@ -137,6 +151,7 @@ $borderColor: rgba(134, 128, 128, 0.4);
         }
         .slick-prev { left: -60px }
         .slick-next { right: -60px }
+        .slick-prev::before, .slick-next::before{ opacity: .3 }
 
         &.reduced{
             .coverBt {
@@ -244,10 +259,10 @@ $borderColor: rgba(134, 128, 128, 0.4);
         @media only screen and (max-width: 520px) { font-size: 2rem; line-height: 1.4em; }
         &.txt-normal {
             font-family: times, sans-serif;
-            font-size: 2rem;
+            font-size: 1.8rem;
             letter-spacing: 0;
-            @media only screen and (max-width: 800px) { font-size: 1.6rem; line-height: 1.8em; }
-            @media only screen and (max-width: 520px) { font-size: 1.4rem; line-height: 1.6em; }
+            @media only screen and (max-width: 800px) { font-size: 1.4rem; line-height: 1.8em; }
+            @media only screen and (max-width: 520px) { font-size: 1.2rem; line-height: 1.6em; }
 
         }
         &.txt-center {
