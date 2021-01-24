@@ -10,6 +10,7 @@ import ProjectPuzzleEinstein from './Components/Projects/Puzzle_Einstein/Puzzle_
 import StarApiOne from './Components/Projects/StarApiOne/StarApiOne';
 import OpenLibrarySearch from './Components/Projects/OpenLibrarySearch/OpenLibrarySearch';
 import DailyCure from './Components/Projects/DailyCure/DailyCure';
+import Roundy from './Components/Projects/Roundy/Roundy';
 import Parallexer from './Components/Projects/Parallexer/Parallexer';
 import FamPuzzle from './Components/Projects/Puzzle_Einstein/FamPuzzle';
 
@@ -28,6 +29,7 @@ function App() {
                             <Route path="/project/nasa-rover-photos" component={StarApiOne} />
                             <Route path="/project/open-library-search" component={OpenLibrarySearch} />
                             <Route path="/project/daily-cure" component={DailyCure} />
+                            <Route path="/project/roundy-lights" component={Roundy} />
                             <Route path="/project/p3" component={Parallexer} />
                             <Route path="/project/family" component={FamPuzzle} />
                             <Header />

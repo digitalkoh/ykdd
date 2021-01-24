@@ -16,6 +16,10 @@
         "path" : "/project/daily-cure"
     },
     {
+        "name" : "Lights Go 'Round",
+        "path" : "/project/roundy-lights"
+    },
+    {
         "name" : "Scroll Behavior",
         "path" : "/project/p3"
     },

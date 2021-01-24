@@ -1,0 +1,79 @@
+[data-cssscope-roundy] {
+  background-color: #000;
+  width: 100%;
+  height: 100%;
+}
+[data-cssscope-roundy] .lightboard {
+  background-color: #000;
+  position: relative;
+  width: 600px;
+  height: 600px;
+  margin: auto;
+}
+[data-cssscope-roundy] .Rcontrol {
+  position: relative;
+  padding: 20px;
+  text-align: center;
+  margin: auto;
+}
+[data-cssscope-roundy] .Rcontrol button {
+  width: 500px;
+  cursor: pointer;
+  outline: none;
+  padding: 0.8em 0;
+  border-radius: 12px;
+  border: 0;
+  background-color: #ffa755;
+  color: #fff;
+  font-size: 1.8em;
+  transition: 0.4s;
+}
+[data-cssscope-roundy] .Rcontrol button:hover {
+  background-color: #dd822d;
+}
+[data-cssscope-roundy] .lightBulb {
+  background-color: #97ff5b;
+  position: absolute;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  font-weight: bold;
+  font-size: 24px;
+  font-family: arial;
+  transition: 0.2s;
+}
+[data-cssscope-roundy] .activeLight {
+  position: absolute;
+  background-color: #da047a;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+}
+[data-cssscope-roundy] .pointLight {
+  z-index: 2;
+}
+[data-cssscope-roundy] .pointLight.woncolor {
+  color: #fff;
+}
+[data-cssscope-roundy] .points {
+  color: #fff;
+  font-size: 5em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+[data-cssscope-roundy] .points .pointsTxt {
+  font-size: 0.3em;
+}
+[data-cssscope-roundy] .points.winner {
+  color: #da047a;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=style.css.map */
