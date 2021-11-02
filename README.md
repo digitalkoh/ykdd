@@ -1,2 +1,2 @@
 # ykdd
-ykdd site 2020
+React apps
